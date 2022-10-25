@@ -18,7 +18,7 @@
 
             <ul class = "menu"> 
                 <li><a href = "login">SIGN IN</a></li>
-                <li><a href = "#">REGISTER</a></li>
+                <li><a href = "register">REGISTER</a></li>
             </ul>
         </nav>
         <div class = "heading">
