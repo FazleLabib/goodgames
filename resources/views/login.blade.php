@@ -11,9 +11,10 @@
     <h2>Sign in</h2>
     <div class="login-page">
         <div class="form">
-            <form class="login-form">
-                <input type="text" placeholder="Email Address"/>
-                <input type="password" placeholder="Password"/>
+            <form class="login-form" action = "login" method = "POST">
+                @csrf
+                <input type="text" name = "email" placeholder="Email Address"/>
+                <input type="password" name = "password" placeholder="Password"/>
                 <button>LOGIN NOW</button>
                 <p class="message">Not registered? <a href="register">Create an account</a></p>
             </form>
