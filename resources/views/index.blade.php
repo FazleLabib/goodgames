@@ -23,8 +23,10 @@
         </nav>
         <div class = "heading">
             <h1>Log and rate games you've played.<br />Find your next favorite game.</h1>
-            <button type = "button">GET STARTED</button>
-
+            <a href = 'register'>
+                <button type = "button">GET STARTED</button>
+            </a>
+            
         </div>
     </section>
 </body>
