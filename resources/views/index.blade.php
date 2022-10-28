@@ -8,7 +8,7 @@
     <link href="{{ asset('/css/styles.css') }}" rel="stylesheet">
     
 </head>
-<body>
+<body class="landing-page">
     <section class = "main">
         <nav>
             <a href = "#" class = "logo">
@@ -23,7 +23,7 @@
         <div class = "heading">
             <h1>Log and rate games you've played.<br />Find your next favorite game.</h1>
             <a href = 'register'>
-                <button type = "button">GET STARTED</button>
+                <button class="get-started-btn" type = "button">GET STARTED</button>
             </a>
             
         </div>

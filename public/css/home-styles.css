@@ -1,3 +1,4 @@
+/*
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 :root {
@@ -30,7 +31,7 @@ input, button, textarea {
     outline: none;
 }
 
-/**********NAVIGATION**********/
+/**********NAVIGATION*********
 
 nav {
     display: flex;
@@ -67,7 +68,7 @@ nav ul li a:hover {
     color: var(--safety-orange);
 }
 
-/*****filter menu*****/
+/*****filter menu*****
 
 #browse-by{
     color: var(--less-white);
@@ -131,7 +132,7 @@ nav ul li a:hover {
 {
 	background: ;
 }
-*/
+*
 
 #primary_nav_wrap ul li:hover
 {
@@ -172,7 +173,7 @@ nav ul li a:hover {
 }
 
 
-/*****Game Cards*****/
+/*****Game Cards*****
 
 .game-grid {
     display: grid;
@@ -188,3 +189,4 @@ nav ul li a:hover {
 .game-card img{
     border-radius: 10px;
 }
+*/
