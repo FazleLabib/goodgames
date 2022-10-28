@@ -126,8 +126,16 @@ main {
 
 /**********Login & Registration Page**********/
 
+
+.login-page {
+    margin-top: 200px;
+    margin-left: 782px;
+    width: 360px;
+    padding: 8% 0 0;
+}
+
 .login-page h2 {
-    margin: 0;
+    margin-top: 220px;
     padding-bottom: 0.5rem;
     letter-spacing: 0.15rem;
     position: absolute; /*or fixed*/
@@ -136,12 +144,6 @@ main {
     text-align: center;
     color: white;
     transform: translate(-50%, -50%);
-}
-
-.login-page {
-    width: 360px;
-    padding: 8% 0 0;
-    margin: auto;
 }
 
 .login-form {
