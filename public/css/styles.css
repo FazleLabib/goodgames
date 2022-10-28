@@ -328,3 +328,86 @@ main {
 .game-card img:hover{
     border: 2px solid var(--safety-orange);
 }
+
+/*****Game Info Page*****/
+
+.game-info {
+    border-bottom: 1px solid var(--less-white);
+    margin-top: 1%;
+    margin-left: 13.5%;
+    margin-right: 13.5%;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: flex;
+}
+
+.info-container {
+    display: flex;
+    margin-left: 24px;
+}
+
+.info-container img {
+    width: 24rem;
+    border-radius: 5px;
+}
+
+.game-details {
+    margin-bottom: none;
+    margin-left: 50px;
+}
+
+.game-details h2{
+    font-size: 3.125rem;
+    margin: auto;
+    color: white;
+}
+
+.other-details {
+    margin-top: -10px;
+    display: flex;
+}
+
+.other-details h3 {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.game-year {
+    color: var(--less-white);
+}
+
+.game-studio {
+    color: white;
+    margin-left: 10px;
+}
+
+.game-description {
+    font-size: x-large;
+    font-weight:300;
+    margin-top: -5px;
+    width: 60%;
+    color: white;
+}
+
+.game-btn {
+    display: flex;
+    column-gap: 15px;
+}
+
+.game-btn button{
+    background-color: var(--safety-orange);
+    color: white;
+    border: none;
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 7px;
+    transition: background-color 0.5s;
+    cursor: pointer;
+}
+
+.game-btn button:hover {
+    background-color: var(--orange);
+}
+
+/*border: 1px solid;*/

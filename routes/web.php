@@ -30,5 +30,9 @@ Route::get('/home', function () {
     return view('home');
 });
 
+Route::get('/game', function () {
+    return view('game');
+});
+
 Route::post("/login", [UserController::class, 'login']);
 Route::get("/home", [HomeController::class, 'home']);
