@@ -321,4 +321,10 @@ main {
 }
 .game-card img{
     border-radius: 10px;
+    border: 2px solid transparent;
+    transition: border 0.3s;
+}
+
+.game-card img:hover{
+    border: 2px solid var(--safety-orange);
 }
