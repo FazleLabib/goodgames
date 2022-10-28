@@ -10,7 +10,6 @@
 </head>
 <body>
     <section class = "main">
-        <div id = "grad"></div>
         <nav>
             <a href = "#" class = "logo">
                 <img src = "images/logo.png"/>
