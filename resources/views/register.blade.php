@@ -8,8 +8,8 @@
     <link href="{{ asset('/css/styles.css') }}" rel="stylesheet">
 </head>
 <body class="login-page">
-    <h2>Create an account</h2>
     <div class="login-form">
+        <h2>Create an account</h2>
             <form class="form">
                 <input type="text" placeholder="Email Address"/>
                 <input type="text" placeholder="Username"/>

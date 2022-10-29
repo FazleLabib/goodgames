@@ -8,8 +8,8 @@
     <link href="{{ asset('/css/styles.css') }}" rel="stylesheet">
 </head>
 <body class="login-page">
-    <h2>Sign in</h2>
     <div class="login-form">
+        <h2>Sign in</h2>
             <form class="form" action = "login" method = "POST">
                 @csrf
                 <input type="text" name = "email" placeholder="Email Address"/>

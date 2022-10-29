@@ -125,22 +125,16 @@ main {
 
 
 .login-page {
-    margin-top: 200px;
-    margin-left: 782px;
+    background: var(--void-blue);
+    margin-top: 300px;
+    margin-left: 780px;
+    margin-right: 780px;
     width: 360px;
-    padding: 8% 0 0;
 }
 
 .login-page h2 {
-    margin-top: 220px;
-    padding-bottom: 0.5rem;
-    letter-spacing: 0.15rem;
-    position: absolute; /*or fixed*/
-    top: 10%;
-    left: 50%;
-    text-align: center;
+    margin-top: 0px;
     color: white;
-    transform: translate(-50%, -50%);
 }
 
 .login-form {
@@ -148,7 +142,6 @@ main {
     z-index: 1;
     background: var(--eerie-black);
     max-width: 360px;
-
     padding: 45px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
