@@ -13,7 +13,6 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
     background-color: var(--eerie-black);
 }
 
@@ -21,6 +20,11 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("/images/background.jpg");
+}
+
+h1, h2, h3, p, a, button {
+    font-family: 'Roboto', sans-serif;
+    color: white;
 }
 
 a {
@@ -35,6 +39,16 @@ input, button, textarea {
     border: none;
     outline: none;
     border-radius: 5px;
+}
+
+button {
+    background: var(--safety-orange);
+    cursor: pointer;
+
+}
+
+button:hover, button:active, button:focus {
+    background-color: var(--orange);
 }
 
 /**********NAVIGATION**********/
@@ -64,7 +78,6 @@ nav ul li a {
     letter-spacing: 1px;
     border-radius: 3px;
     transition-timing-function: 0.6s ease-in-out;
-    color: white;
 }
 
 nav ul li a:hover {
@@ -88,7 +101,6 @@ main {
 .heading h1{
     font-size: 3.438rem;
     text-align: center;
-    color: white;
     margin: 0;
     padding-bottom: 0.5rem;
     letter-spacing: 0.15rem;
@@ -101,7 +113,6 @@ main {
 
 .get-started-btn {
     background-color: var(--safety-orange);
-    color: white;
     border: none;
     margin: 4px 2px;
     padding: 15px 20px;
@@ -117,9 +128,6 @@ main {
     cursor: pointer;
 }
 
-.get-started-btn:hover {
-    background-color: var(--orange);
-}
 
 /**********Login & Registration Page**********/
 
@@ -134,7 +142,6 @@ main {
 
 .login-page h2 {
     margin-top: 0px;
-    color: white;
 }
 
 .login-form {
@@ -166,16 +173,11 @@ main {
     width: 100%;
     border: 0;
     padding: 15px;
-    color: #FFFFFF;
     font-size: 20px;
     font-weight: 700;
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
-}
-
-.login-btn:hover, .login-btn:active, .login-btn:focus {
-    background: var(--orange);
 }
 
 .login-form .message {
@@ -355,7 +357,6 @@ main {
 .game-details h2{
     font-size: 3.125rem;
     margin: auto;
-    color: white;
 }
 
 .other-details {
@@ -373,7 +374,6 @@ main {
 }
 
 .game-studio {
-    color: white;
     margin-left: 10px;
 }
 
@@ -382,7 +382,6 @@ main {
     font-weight:300;
     margin-top: -5px;
     width: 60%;
-    color: white;
 }
 
 .game-btn {
@@ -392,7 +391,6 @@ main {
 
 .game-btn button{
     background-color: var(--safety-orange);
-    color: white;
     border: none;
     font-size: 17px;
     font-weight: bold;
@@ -404,6 +402,117 @@ main {
 
 .game-btn button:hover {
     background-color: var(--orange);
+}
+
+/*****Profile Page*****/
+
+.profile-header, .favourite-games {
+    display: flex;
+    margin-top: 70px;
+    margin-left: 13.5%;
+    margin-right: 13.5%;
+    padding-left: 24px;
+    justify-content: space-between;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+}
+
+.profile-info img {
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: border 0.3s;
+    width: 260px;
+}
+
+.profile-info img:hover {
+    border: 2px solid var(--safety-orange);
+}
+
+.profile-name-btn {
+    padding-left: 24px;
+    font-size: 25px;
+}
+
+.profile-name-btn h2 {
+    margin: auto;
+}
+
+.profile-name-btn button{
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 7px;
+    transition: background-color 0.5s;
+}
+
+.profile-stats {
+    display: flex;
+    align-items: center;
+}
+
+.profile-stats div {
+    padding: 0 20px;
+}
+
+.profile-stats h2{
+    margin: auto;
+    font-size: 75px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.profile-stats h3{
+    margin: auto;
+    font-size: 35px;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.games-played {
+    margin-right: 50px;
+}
+
+.favourite-games {
+    display: grid;
+    text-transform: uppercase;
+}
+
+.favourite-games .header{
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--less-white);
+}
+
+.favourite-games h3 {
+    padding-left: 24px;
+    margin-bottom: 0px;
+    font-weight: 400;
+}
+
+.fav-games-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 270px);
+    margin-top: 2%;
+    align-content: center;
+}
+
+.fav-game-card {
+    margin: auto;
+    height: 100px;
+}
+.fav-game-card img{
+    height: 320px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: border 0.3s;
+}
+
+.fav-game-card img:hover{
+    border: 2px solid var(--safety-orange);
 }
 
 /*border: 1px solid;*/
