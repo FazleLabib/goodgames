@@ -51,10 +51,10 @@
 	</section>
 
 	<div class="game-grid">
-		@foreach($posters as $poster)
+		@foreach($games as $game)
 			<div class = "game-card">
-				<a href="#">
-					<img src="images/{{$poster['poster']}}" alt="">
+				<a href="/game/{{$game['id']}}">
+					<img src="images/{{$game['poster']}}" alt="">
 				</a>
 			</div>
 		@endforeach

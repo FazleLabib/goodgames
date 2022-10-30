@@ -10,11 +10,11 @@ class HomeController extends Controller
     //
     
     function show() {
-        $posters =  Game::select('poster')->get();
+        $games =  Game::all();
         $genres = Game::select('genre')->distinct()->get();
         $platforms = Game::select('platform')->distinct()->get();
         $years = Game::select(Game::raw('year'))->groupBy('year')->get();
-        
-        return view('home', compact('posters', 'genres', 'platforms', 'years'));
+
+        return view('home', compact('games', 'genres', 'platforms', 'years'));
     }
 }
