@@ -55,7 +55,7 @@ button:hover, button:active, button:focus {
 
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     width: 100%;
     background-color: var(--void-blue);
@@ -97,6 +97,10 @@ main {
 }
 
 /**********Landing Page**********/
+
+.landing-page nav {
+    justify-content: space-around;
+}
 
 .heading h1{
     font-size: 3.438rem;
