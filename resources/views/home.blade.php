@@ -55,41 +55,13 @@
 	</section>
 
 	<div class="game-grid">
-		<div class = "game-card">
-			<a href="#">
-				<img src="images/Witcher 3.png" alt="">
-			</a>
-		</div>
-		<div class ="game-card">
-			<a href="#">
-				<img src="images/discoelysium.png" alt="">
-			</a>
-		</div>
-		<div class ="game-card">
-			<a href="#">
-				<img src="images/godofwar.png" alt="">
-			</a>
-		</div>
-		<div class ="game-card">
-			<a href="#">
-				<img src="images/eldenring.png" alt="">
-			</a>
-		</div>
-		<div class ="game-card">
-			<a href="#">
-				<img src="images/hollowknight.png" alt="">
-			</a>
-		</div>
-		<div class ="game-card">
-			<a href="#">
-				<img src="images/inscryption.png" alt="">
-			</a>
-		</div>
-		<div class ="game-card">
-			<a href="#">
-				<img src="images/rdr2.png" alt="">
-			</a>
-		</div>
+		@foreach($games as $game)
+			<div class = "game-card">
+				<a href="#">
+					<img src="images/{{$game['poster']}}" alt="">
+				</a>
+			</div>
+		@endforeach
 	</div>
 	
 </body>

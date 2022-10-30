@@ -26,9 +26,11 @@ Route::get('/register', function () {
     return view('register');
 });
 
+/*
 Route::get('/home', function () {
     return view('home');
 });
+*/
 
 Route::get('/game', function () {
     return view('game');
@@ -39,4 +41,4 @@ Route::get('/profile', function () {
 });
 
 Route::post("/login", [UserController::class, 'login']);
-Route::get("/home", [HomeController::class, 'home']);
+Route::get("home", [HomeController::class, 'home']);
