@@ -36,6 +36,8 @@ Route::get('/profile', function () {
     return view('profile-page');
 });
 
-Route::post("/login", [UserController::class, 'login']);
+
+Route::post("checklogin", [UserController::class, 'checklogin']);
+Route::post("home", [UserController::class, 'successlogin']);
 Route::get("home", [HomeController::class, 'show']);
 Route::get("/game/{id}", [HomeController::class, 'viewSpecificGame']);

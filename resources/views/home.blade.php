@@ -22,7 +22,7 @@
             </ul>
         </nav>
     </section>
-
+	
 	<section id="primary_nav_wrap">
 		<h3 id = "browse-by">Browse By</h3>
 		<ul>

@@ -8,6 +8,7 @@
     <link href="{{ asset('/css/styles.css') }}" rel="stylesheet">
 </head>
 <body>
+@if(isset(Auth::user()->email))
     <section class = "main">
         <nav>
             <a href = "/home" class = "logo">
@@ -79,5 +80,8 @@
 		    </div>
         </div>
     </div>
+    @else
+        <script>window.location="login";</script>
+@endif
 </body>
 </html>

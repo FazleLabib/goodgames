@@ -8,6 +8,9 @@
     <link href="{{ asset('/css/styles.css') }}" rel="stylesheet">
     
 </head>
+@if(isset(Auth::user()->email))
+        <script>window.location="home";</script>
+@endif
 <body class="landing-page">
     <section class = "main">
         <nav>

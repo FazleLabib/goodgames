@@ -7,6 +7,9 @@
     <title>Good Games</title>
     <link href="{{ asset('/css/styles.css') }}" rel="stylesheet">
 </head>
+@if(isset(Auth::user()->email))
+        <script>window.location="home";</script>
+@endif
 <body class="login-page">
     <div class="login-form">
         <h2>Create an account</h2>
