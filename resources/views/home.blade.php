@@ -22,7 +22,9 @@
             </ul>
         </nav>
     </section>
-	
+	<div class="welcome-msg">
+		<h1>Welcome back, <a href="profile">{{Auth::User()->name}}</a>. Played anything recently?</h1>
+	</div>
 	<section id="primary_nav_wrap">
 		<h3 id = "browse-by">Browse By</h3>
 		<ul>
