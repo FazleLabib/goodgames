@@ -26,9 +26,9 @@
     </section>
     <div class="profile-header">
         <div class="profile-info">
-            <img src="images/dndln.jpg" alt="">
+            <img src="images/{{Auth::User()->image}}" alt="">
             <div class="profile-name-btn">
-                <h2>Dandelion</h2>
+                <h2>{{Auth::User()->name}}</h2>
                 <a href = 'edit-profile'>
                     <button type = "button">edit profile</button>
                 </a>
