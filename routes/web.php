@@ -32,10 +32,6 @@ Route::get('/home', function () {
 });
 */
 
-Route::get('/game', function () {
-    return view('game');
-});
-
 Route::get('/profile', function () {
     return view('profile-page');
 });
