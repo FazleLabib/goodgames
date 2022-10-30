@@ -28,37 +28,33 @@
 		<ul>
   			<li id = "menu-name"><a>YEAR</a>
     			<ul>
-      				<li> <a class="item" href="/home/decade/2020s/"> 2020s </a> </li> 
-      				<li> <a class="item" href="/home/decade/2010s/"> 2010s </a> </li> 
-      				<li> <a class="item" href="/home/decade/2000s/"> 2000s </a> </li> 
-      				<li> <a class="item" href="/home/decade/1990s/"> 1990s </a> </li> 
-      				<li> <a class="item" href="/home/decade/1980s/"> 1980s </a> </li> 
-      				<li> <a class="item" href="/home/decade/1970s/"> 1970s </a> </li> 
-      				<li> <a class="item" href="/home/decade/1960s/"> 1960s </a> </li>
+					@foreach($years as $year)
+						<li> <a class="item" href="/home/year/{{$year['year']}}/">{{$year['year']}}</a> </li>
+					@endforeach
     			</ul>
   			</li>
   			<li id = "menu-name"><a>GENRE</a>
     			<ul>
-      				<li><a class="item" href="/home/genre/action/">Action</a></li>
-	  				<li><a class="item" href="/home/genre/adventure/">Adventure</a></li>
-	  				<li><a class="item" href="/home/genre/rpg/">RPG</a></li>
+					@foreach($genres as $genre)
+						<li><a class="item" href="/home/genre/{{$genre['genre']}}/">{{$genre['genre']}}</a></li>
+					@endforeach
     			</ul>
   			</li>
   			<li id = "menu-name"><a>PLATFORM</a>
     			<ul>
-      				<li><a class="item" href="/home/platform/pc/">PC</a></li>
-	  				<li><a class="item" href="/home/platform/nintendo/">Nintendo</a></li>
-	  				<li><a class="item" href="/home/platform/console/">Console</a></li>
+					@foreach($platforms as $platform)
+					<li><a class="item" href="/home/platform/{{$platform['platform']}}/">{{$platform['platform']}}</a></li>
+					@endforeach
     			</ul>
   			</li>
 		</ul>
 	</section>
 
 	<div class="game-grid">
-		@foreach($games as $game)
+		@foreach($posters as $poster)
 			<div class = "game-card">
 				<a href="#">
-					<img src="images/{{$game['poster']}}" alt="">
+					<img src="images/{{$poster['poster']}}" alt="">
 				</a>
 			</div>
 		@endforeach

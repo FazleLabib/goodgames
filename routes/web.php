@@ -41,4 +41,4 @@ Route::get('/profile', function () {
 });
 
 Route::post("/login", [UserController::class, 'login']);
-Route::get("home", [HomeController::class, 'showCards']);
+Route::get("home", [HomeController::class, 'show']);
