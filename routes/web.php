@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RegisterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,13 +19,13 @@ use App\Http\Controllers\HomeController;
 //     return view('index');
 // });
 
-Route::get('/login', function () {
-    return view('login');
-});
+// Route::get('/login', function () {
+//     return view('login');
+// });
 
-Route::get('/register', function () {
-    return view('register');
-});
+// Route::get('/register', function () {
+//     return view('register');
+// });
 
 /*
 Route::get('/home', function () {
@@ -36,8 +37,10 @@ Route::get('/profile', function () {
     return view('profile-page');
 });
 
-
+Route::get("login", [UserController::class, 'index']);
 Route::post("checklogin", [UserController::class, 'checklogin']);
+Route::get('register', [RegisterController::class, 'index']);
+Route::post('store', [RegisterController::class, 'store']);
 Route::post("home", [UserController::class, 'successlogin']);
 Route::get("home", [HomeController::class, 'show']);
 Route::get("/game/{id}", [HomeController::class, 'viewSpecificGame']);

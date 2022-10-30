@@ -9,8 +9,9 @@ use App\Models\User;
 class UserController extends Controller
 {
 	function index() {
-		return view('index');
+		return view('login');
 	}
+
     function checklogin(Request $request)
 	{
 		//create a validation of login 
