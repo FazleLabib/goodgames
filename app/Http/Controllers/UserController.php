@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 class UserController extends Controller
 {
+	function index() {
+		return view('index');
+	}
     function checklogin(Request $request)
 	{
 		//create a validation of login 
@@ -32,4 +35,9 @@ class UserController extends Controller
     function successlogin() {
         return view('home');
     }
+
+	function logout() {
+		Auth::logout();
+		return redirect('/');
+	}
 }

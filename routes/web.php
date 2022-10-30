@@ -14,9 +14,9 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 
 Route::get('/login', function () {
     return view('login');
@@ -41,3 +41,5 @@ Route::post("checklogin", [UserController::class, 'checklogin']);
 Route::post("home", [UserController::class, 'successlogin']);
 Route::get("home", [HomeController::class, 'show']);
 Route::get("/game/{id}", [HomeController::class, 'viewSpecificGame']);
+Route::get('logout',[UserController::class, 'logout']);
+Route::get('/', [UserController::class, 'index']);
