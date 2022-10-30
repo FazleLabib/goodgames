@@ -16,5 +16,10 @@ class HomeController extends Controller
         $years = Game::select(Game::raw('year'))->groupBy('year')->get();
 
         return view('home', compact('games', 'genres', 'platforms', 'years'));
+    } 
+
+    function viewSpecificGame($id) {
+        $gameInfo = Game::where('id',$id)->first();
+        return view('game', ['gameInfo' => $gameInfo]);
     }
 }

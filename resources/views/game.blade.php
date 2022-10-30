@@ -11,7 +11,7 @@
     <section class = "main">
         <nav>
             <a href = "/home" class = "logo">
-                <img src = "images/logo.png"/>
+                <img src = "/images/logo.png"/>
             </a>
 
             <ul class = "menu"> 
@@ -25,18 +25,14 @@
 
     <div class="game-info">
         <div class="info-container">
-            <img src="images/Witcher 3.png" alt="">
+            <img src="/images/{{$gameInfo['poster']}}" alt="">
             <div class="game-details">
-                <h2>The Witcher 3: Wild Hunt</h2>
+                <h2>{{$gameInfo['title']}}</h2>
                 <div class="other-details">
-                    <h3 class="game-year">2015</h3>
-                    <h3 class="game-studio">By CD Projekt Red</h3>
+                    <h3 class="game-year">{{$gameInfo['year']}}</h3>
+                    <h3 class="game-studio">By {{$gameInfo['developer']}}</h3>
                 </div>
-                <p class="game-description">As war rages on throughout the Northern Realms, 
-                you take on the greatest contract of your 
-                life — tracking down the Child of Prophecy, 
-                a living weapon that can alter the shape of the world.
-            </p>
+                <p class="game-description">{{$gameInfo['description']}}</p>
             <div class="game-btn">
                 <a href = '#'>
                     <button type = "button">log game</button>
