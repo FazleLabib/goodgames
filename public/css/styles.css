@@ -539,4 +539,121 @@ main {
     border: 2px solid var(--safety-orange);
 }
 
+/*****Edit Profile Page*****/
+
+.edit-profile-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    margin-left: 15.5%;
+    margin-right: 15.5%;
+    padding-left: 24px;
+    justify-content: space-between;
+}
+
+.edit-profile-container .header{
+    border-bottom: 1px solid var(--less-white);
+    font-size: large;
+}
+
+.edit-profile-container .header h1{
+    margin-bottom: 0px;
+    font-weight: 400;
+}
+
+.edit-profile-container .content{
+    display: flex;
+    margin-top: 50px;
+}
+
+.content .info-form {
+    margin-right: 160px;
+}
+
+.info-form h2 {
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.info-form input {
+    background: var(--less-white);
+    width: 500px;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.save-btn {
+    margin-top: 20px;
+    text-transform: uppercase;
+    background: var(--safety-orange);
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+.content .cards-image{
+    display: grid;
+}
+
+.cards-image .fav-cards{
+    display: grid;
+    height: 200px;
+    text-transform: uppercase;
+}
+
+.fav-cards .fav-header{
+    width: 640px;
+    border-bottom: 1px solid var(--less-white);
+}
+
+
+.fav-header h3 {
+    margin-bottom: 0px;
+    font-weight: 400;
+}
+
+.add-fav-grid {
+    display: grid;
+    padding-left: 24px;
+    grid-template-columns: repeat(5, 1fr);
+    margin-top: 2%;
+}
+
+.add-fav-card {
+    margin: 0px;
+    width: 100px;
+}
+
+.add-fav-card img{
+    width: 100px;
+    border-radius: 5px;
+}
+
+.cards-image .profile-pic{
+    height: 210px;
+}
+
+.profile-pic .add-pic {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.profile-pic img {
+    height: 160px;
+    width: 160px;
+}
+
+.profile-pic h3 {
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+}
+
 /*border: 1px solid;*/

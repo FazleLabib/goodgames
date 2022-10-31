@@ -29,7 +29,7 @@
             <img src="images/{{Auth::User()->image}}" alt="">
             <div class="profile-name-btn">
                 <h2>{{Auth::User()->name}}</h2>
-                <a href = 'edit-profile'>
+                <a href = 'settings'>
                     <button type = "button">edit profile</button>
                 </a>
             </div>

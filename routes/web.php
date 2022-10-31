@@ -37,6 +37,10 @@ Route::get('/profile', function () {
     return view('profile-page');
 });
 
+Route::get('/settings', function () {
+    return view('edit-profile');
+});
+
 Route::get("login", [UserController::class, 'index']);
 Route::post("checklogin", [UserController::class, 'checklogin']);
 Route::get('register', [RegisterController::class, 'index']);
