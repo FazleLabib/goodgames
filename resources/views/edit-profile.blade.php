@@ -29,7 +29,7 @@
             </div>
             <div class="content">
                 <div class="info-form">
-                    <form class="form" method = "post" action = "#">
+                    <form class="form" method = "post" enctype="multipart/form-data" action = "#">
                         <div class = "input">
                             {{ @csrf_field() }}
                             <h2>Full Name</h2>
@@ -38,6 +38,8 @@
                             <input type="text" name = "email" placeholder="{{Auth::User()->email}}"/>
                             <h2>New Password</h2>
                             <input type="password" name = "password" placeholder="Enter your new password here"/>
+                            <h2>Change Profile Photo</h2>
+                            <input type="file" name = "profile-image"/>
                         </div>
                         <button class="save-btn">save changes</button>
                     </form>
@@ -75,14 +77,14 @@
 		                    </div>
                         </div>
                     </div>
-                    <div class="profile-pic">
+                    <!-- <div class="profile-pic">
                         <div class = "add-pic">
 				            <img src="images/{{Auth::User()->image}}" alt="">
 		                </div>
                         <a href="">
                             <h3>Change Profile Photo</h3>
                         </a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

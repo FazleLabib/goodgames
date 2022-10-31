@@ -598,6 +598,7 @@ main {
 
 .content .cards-image{
     display: grid;
+    /* align-content: center; */
 }
 
 .cards-image .fav-cards{
@@ -634,7 +635,7 @@ main {
     border-radius: 5px;
 }
 
-.cards-image .profile-pic{
+/* .cards-image .profile-pic{
     height: 210px;
 }
 
@@ -654,6 +655,6 @@ main {
     font-weight: 400;
     display: flex;
     justify-content: center;
-}
+} */
 
 /*border: 1px solid;*/
