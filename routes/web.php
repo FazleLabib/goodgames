@@ -49,3 +49,4 @@ Route::post("home", [UserController::class, 'successlogin']);
 Route::get("home", [HomeController::class, 'show']);
 Route::get("/game/{id}", [HomeController::class, 'viewSpecificGame']);
 Route::get('logout',[UserController::class, 'logout']);
+Route::put('settings', [UserController::class, 'update']);

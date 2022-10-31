@@ -29,17 +29,18 @@
             </div>
             <div class="content">
                 <div class="info-form">
-                    <form class="form" method = "post" enctype="multipart/form-data" action = "#">
+                    <form class="form" method = "POST" action = "settings" enctype="multipart/form-data">
                         <div class = "input">
                             {{ @csrf_field() }}
+                            {{ method_field('PUT') }}
                             <h2>Full Name</h2>
-                            <input type="text" name = "name" placeholder="{{Auth::User()->name}}"/>
+                            <input type="text" value="{{Auth::User()->name}}" name = "name" placeholder="{{Auth::User()->name}}"/>
                             <h2>Email Address</h2>
-                            <input type="text" name = "email" placeholder="{{Auth::User()->email}}"/>
+                            <input type="text" value="{{Auth::User()->email}}" name = "email" placeholder="{{Auth::User()->email}}"/>
                             <h2>New Password</h2>
                             <input type="password" name = "password" placeholder="Enter your new password here"/>
                             <h2>Change Profile Photo</h2>
-                            <input type="file" name = "profile-image"/>
+                            <input type="file" name = "image"/>
                         </div>
                         <button class="save-btn">save changes</button>
                     </form>
