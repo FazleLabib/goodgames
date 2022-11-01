@@ -53,7 +53,7 @@
 		</ul>
 		<form action="">
 			<div class="search-form">
-				<input type="search" name="search" value="{{ $search }}" placeholder="Find a Game">
+				<input type="search" name="search" value="{{ $search }}" onfocus="this.value=''" placeholder="Find a Game">
 				<button class="search-btn">Search</button>
 			</div>
 		</form>
