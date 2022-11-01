@@ -15,7 +15,8 @@ class HomeController extends Controller
             $games = Game::where('title', 'LIKE', "%$search%")
                     ->orwhere('developer', 'LIKE', "%$search%")
                     ->orwhere('genre', 'LIKE', "%$search%")
-                    ->orwhere('platform', 'LIKE', "%$search%")-> get();
+                    ->orwhere('platform', 'LIKE', "%$search%")
+                    ->orwhere('year', 'LIKE', "%$search%")-> get();
         }
         else {
             $games =  Game::all();

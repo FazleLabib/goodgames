@@ -33,21 +33,21 @@
   			<li id = "menu-name"><a>YEAR</a>
     			<ul>
 					@foreach($years as $year)
-						<li> <a class="item" href="/home/year/{{$year['year']}}/">{{$year['year']}}</a> </li>
+						<li> <a class="item" href="?search={{$year['year']}}">{{$year['year']}}</a> </li>
 					@endforeach
     			</ul>
   			</li>
   			<li id = "menu-name"><a>GENRE</a>
     			<ul>
 					@foreach($genres as $genre)
-						<li><a class="item" href="/home/genre/{{$genre['genre']}}/">{{$genre['genre']}}</a></li>
+						<li><a class="item" href="?search={{$genre['genre']}}">{{$genre['genre']}}</a></li>
 					@endforeach
     			</ul>
   			</li>
   			<li id = "menu-name"><a>PLATFORM</a>
     			<ul>
 					@foreach($platforms as $platform)
-					<li><a class="item" href="/home/platform/{{$platform['platform']}}/">{{$platform['platform']}}</a></li>
+					<li><a class="item" href="?search={{$platform['platform']}}">{{$platform['platform']}}</a></li>
 					@endforeach
     			</ul>
   			</li>
