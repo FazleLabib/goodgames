@@ -15,7 +15,7 @@
                 <img src = "images/logo.png"/>
             </a>
 
-            <ul class = "menu"> 
+            <ul class = "menu">
                 <li><a href = "profile">{{Auth::User()->name}}</a></li>
                 <li><a href = "home">GAMES</a></li>
                 <li><a href = "list">LISTS</a></li>
@@ -54,7 +54,7 @@
 		</ul>
 		<form action="">
 			<div class="search-form">
-				<input type="search" name="search" placeholder="Find a Game">
+				<input type="search" name="search" value="{{ $search }}" placeholder="Find a Game">
 				<button class="search-btn">Search</button>
 			</div>
 		</form>
