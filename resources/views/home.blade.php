@@ -28,7 +28,7 @@
 		<h1>Welcome back, <a href="profile">{{Auth::User()->name}}</a>. Played anything recently?</h1>
 	</div>
 	<section id="primary_nav_wrap">
-		<h3 id = "browse-by">Browse By</h3>
+		<!-- <h3 id = "browse-by">Browse By</h3> -->
 		<ul>
   			<li id = "menu-name"><a>YEAR</a>
     			<ul>
@@ -52,6 +52,12 @@
     			</ul>
   			</li>
 		</ul>
+		<form action="">
+			<div class="search-form">
+				<input type="search" name="search" placeholder="Find a Game">
+				<button class="search-btn">Search</button>
+			</div>
+		</form>
 	</section>
 
 	<div class="game-grid">
