@@ -19,7 +19,6 @@
                 <li><a href = "profile">{{Auth::User()->name}}</a></li>
                 <li><a href = "home">GAMES</a></li>
                 <li><a href = "list">LISTS</a></li>
-                <li><a href = "search">SEARCH</a></li>
 				<li><a href = "logout">LOGOUT</a></li>
             </ul>
         </nav>
