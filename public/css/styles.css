@@ -445,6 +445,7 @@ main {
 .profile-info {
     display: flex;
     align-items: center;
+    padding-left: 18px;
 }
 
 .profile-info img {
@@ -479,6 +480,7 @@ main {
 .profile-stats {
     display: flex;
     align-items: center;
+    padding-right: 15px;
 }
 
 .profile-stats div {
