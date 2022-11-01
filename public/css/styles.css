@@ -43,6 +43,8 @@ input, button, textarea {
 
 button {
     background: var(--safety-orange);
+    text-transform: uppercase;
+    font-weight: 700;
     cursor: pointer;
 
 }
@@ -63,7 +65,7 @@ nav {
 
 nav ul {
     display: flex;
-    
+
 }
 
 nav ul li a {
@@ -123,7 +125,6 @@ main {
     text-align: center;
     text-decoration: none;
     font-size: 20px;
-    font-weight: 700;
     display: inline-block;
     position: absolute;
     top: 70%;
@@ -156,7 +157,7 @@ main {
     padding: 45px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-    
+
 }
 
 .login-form input {
@@ -171,17 +172,9 @@ main {
 }
 
 .login-btn {
-    text-transform: uppercase;
-    outline: 0;
-    background: var(--safety-orange);
     width: 100%;
-    border: 0;
     padding: 15px;
     font-size: 20px;
-    font-weight: 700;
-    -webkit-transition: all 0.3 ease;
-    transition: all 0.3 ease;
-    cursor: pointer;
 }
 
 .login-form .message {
@@ -247,8 +240,6 @@ main {
 .search-form button{
     margin-right: 10px;
     padding: 10px;
-    text-transform: uppercase;
-    font-weight: 700;
 }
 
 #primary_nav_wrap ul
@@ -261,7 +252,7 @@ main {
 	padding:0
 }
 
-#menu-name 
+#menu-name
 {
   border-color: var(--less-white);
   border-style: solid;
@@ -429,14 +420,9 @@ main {
 }
 
 .game-btn button{
-    background-color: var(--safety-orange);
-    border: none;
     font-size: 17px;
-    font-weight: bold;
-    text-transform: uppercase;
     padding: 7px;
     transition: background-color 0.5s;
-    cursor: pointer;
 }
 
 .game-btn button:hover {
@@ -484,7 +470,6 @@ main {
     margin-top: 10px;
     font-size: 15px;
     font-weight: 700;
-    text-transform: uppercase;
     padding: 7px;
     transition: background-color 0.5s;
 }
