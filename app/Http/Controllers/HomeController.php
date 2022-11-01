@@ -29,7 +29,7 @@ class HomeController extends Controller
     }
 
     function viewSpecificGame($id) {
-        $gameInfo = Game::where('id',$id)->first();
+        $gameInfo = Game::where('id',$id)->firstorFail();
         return view('game', ['gameInfo' => $gameInfo]);
     }
 
