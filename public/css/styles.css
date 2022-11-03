@@ -8,12 +8,22 @@
     --safety-orange: #ff7900;
     --orange: #FF871F;
 }
-
+html {
+    height:100%;
+}
 body {
+    min-height:100%;
     margin: 0;
     padding: 0;
+    position:relative;
     box-sizing: border-box;
     background-color: var(--eerie-black);
+}
+
+body::after{
+    content:'';
+    display:block;
+    height:100px;
 }
 
 .landing-page {
@@ -658,4 +668,23 @@ main {
     justify-content: center;
 } */
 
+/*****Footer*****/
+
+.footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    text-align: center;
+    background-color: var(--void-blue);
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.footer p {
+    color: var(--less-white);
+}
+
+.footer a {
+    color: white;
+}
 /*border: 1px solid;*/
