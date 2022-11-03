@@ -12,23 +12,15 @@
         <script>window.location="home";</script>
 @endif
 <body class="landing-page">
-    <section class = "main">
-        <nav>
-            <a href = "#" class = "logo">
-                <img src = "images/logo.png"/>
-            </a>
 
-            <ul class = "menu"> 
-                <li><a href = "login">SIGN IN</a></li>
-                <li><a href = "register">REGISTER</a></li>
-            </ul>
-        </nav>
+    <section class = "main">
+        @include('partials.landing-navbar')
         <div class = "heading">
             <h1>Log and rate games you've played.<br />Find your next favorite game.</h1>
             <a href = 'register'>
                 <button class="get-started-btn" type = "button">GET STARTED</button>
             </a>
-            
+
         </div>
     </section>
 </body>

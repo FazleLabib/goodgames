@@ -10,18 +10,7 @@
 <body>
 @if(isset(Auth::user()->email))
     <section class = "main">
-        <nav>
-            <a href = "/home" class = "logo">
-                <img src = "images/logo.png"/>
-            </a>
-
-            <ul class = "menu">
-                <li><a href = "profile">{{Auth::User()->name}}</a></li>
-                <li><a href = "home">GAMES</a></li>
-                <li><a href = "list">LISTS</a></li>
-				<li><a href = "logout">LOGOUT</a></li>
-            </ul>
-        </nav>
+        @include('partials.navbar')
     </section>
 	<div class="welcome-msg">
 		<h1>Welcome back, <a href="profile">{{Auth::User()->name}}</a>. Played anything recently?</h1>
