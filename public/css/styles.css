@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 :root {
     --eerie-black: #252422;
@@ -6,24 +6,24 @@
     --black-olive: #403d39;
     --less-white: #c5c5c5;
     --safety-orange: #ff7900;
-    --orange: #FF871F;
+    --orange: #ff871f;
 }
 html {
-    height:100%;
+    height: 100%;
 }
 body {
-    min-height:100%;
+    min-height: 100%;
     margin: 0;
     padding: 0;
-    position:relative;
+    position: relative;
     box-sizing: border-box;
     background-color: var(--eerie-black);
 }
 
-body::after{
-    content:'';
-    display:block;
-    height:100px;
+body::after {
+    content: "";
+    display: block;
+    height: 100px;
 }
 
 .landing-page {
@@ -32,8 +32,16 @@ body::after{
     background-image: url("/images/background.jpg");
 }
 
-h1, h2, h3, p, a, button {
-    font-family: 'Roboto', sans-serif;
+h1,
+h2,
+h3,
+p,
+a,
+button,
+label,
+textarea {
+
+    font-family: "Roboto", sans-serif;
     color: white;
 }
 
@@ -45,7 +53,9 @@ ul {
     list-style: none;
 }
 
-input, button, textarea {
+input,
+button,
+textarea {
     border: none;
     outline: none;
     border-radius: 5px;
@@ -56,10 +66,11 @@ button {
     text-transform: uppercase;
     font-weight: 700;
     cursor: pointer;
-
 }
 
-button:hover, button:active, button:focus {
+button:hover,
+button:active,
+button:focus {
     background-color: var(--orange);
 }
 
@@ -116,7 +127,7 @@ main {
     justify-content: space-around;
 }
 
-.heading h1{
+.heading h1 {
     font-size: 3.438rem;
     text-align: center;
     margin: 0;
@@ -145,9 +156,7 @@ main {
     cursor: pointer;
 }
 
-
 /**********Login & Registration Page**********/
-
 
 .login-page {
     background: var(--void-blue);
@@ -169,7 +178,6 @@ main {
     padding: 45px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-
 }
 
 .login-form input {
@@ -225,8 +233,7 @@ main {
 
 /*****filter menu*****/
 
-#primary_nav_wrap
-{
+#primary_nav_wrap {
     font-size: 1.25rem;
     margin-left: 16.5%;
     margin-right: 16.5%;
@@ -241,7 +248,7 @@ main {
     margin-bottom: 10px;
 } */
 
-.search-form input{
+.search-form input {
     background: var(--less-white);
     margin-top: 10px;
     padding: 10px;
@@ -249,52 +256,47 @@ main {
     font-size: 14px;
 }
 
-.search-form button{
+.search-form button {
     margin-right: 10px;
     padding: 10px;
 }
 
-#primary_nav_wrap ul
-{
-	position:relative;
-	float:left;
+#primary_nav_wrap ul {
+    position: relative;
+    float: left;
     margin-left: 10px;
     margin-bottom: 10px;
-	padding:0
+    padding: 0;
 }
 
-#menu-name
-{
-  border-color: var(--less-white);
-  border-style: solid;
-  border-width: 0.1px;
-  border-radius: 2px;
+#menu-name {
+    border-color: var(--less-white);
+    border-style: solid;
+    border-width: 0.1px;
+    border-radius: 2px;
 }
 
-#menu-name ul
-{
-  border-color: var(--less-white);
-  border-style: solid;
-  border-width: 0.1px;
-  border-radius: 2px;
+#menu-name ul {
+    border-color: var(--less-white);
+    border-style: solid;
+    border-width: 0.1px;
+    border-radius: 2px;
 }
 
-#primary_nav_wrap ul a
-{
-	display:block;
-	color: var(--less-white);
-	font-weight:700;
-	font-size:12px;
-	line-height:32px;
-	padding:0 15px;
+#primary_nav_wrap ul a {
+    display: block;
+    color: var(--less-white);
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 32px;
+    padding: 0 15px;
 }
 
-#primary_nav_wrap ul li
-{
-	position:relative;
-	float:left;
-	margin:0;
-	padding:0
+#primary_nav_wrap ul li {
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
 }
 
 /*
@@ -304,42 +306,35 @@ main {
 }
 */
 
-#primary_nav_wrap ul li:hover
-{
-	background: var(--void-blue);
+#primary_nav_wrap ul li:hover {
+    background: var(--void-blue);
 }
 
-#primary_nav_wrap ul ul
-{
+#primary_nav_wrap ul ul {
     margin: 0px;
-	display:none;
-	position:absolute;
-	background: var(--eerie-black);
+    display: none;
+    position: absolute;
+    background: var(--eerie-black);
 }
 
-#primary_nav_wrap ul ul li
-{
-	float:none;
-	width:200px;
+#primary_nav_wrap ul ul li {
+    float: none;
+    width: 200px;
 }
 
-#primary_nav_wrap ul ul a
-{
-	line-height:120%;
-	padding:10px 15px
+#primary_nav_wrap ul ul a {
+    line-height: 120%;
+    padding: 10px 15px;
 }
 
-#primary_nav_wrap ul ul ul
-{
-	top:0;
-	left:100%
+#primary_nav_wrap ul ul ul {
+    top: 0;
+    left: 100%;
 }
 
-#primary_nav_wrap ul li:hover > ul
-{
-	display:block
+#primary_nav_wrap ul li:hover > ul {
+    display: block;
 }
-
 
 /*****Game Cards*****/
 
@@ -355,13 +350,13 @@ main {
     margin: auto;
     margin-bottom: 20px;
 }
-.game-card img{
+.game-card img {
     border-radius: 10px;
     border: 2px solid transparent;
     transition: border 0.3s;
 }
 
-.game-card img:hover{
+.game-card img:hover {
     border: 2px solid var(--safety-orange);
 }
 
@@ -392,7 +387,7 @@ main {
     margin-left: 50px;
 }
 
-.game-details h2{
+.game-details h2 {
     font-size: 3.125rem;
     margin: auto;
 }
@@ -417,7 +412,7 @@ main {
 
 .game-description {
     font-size: x-large;
-    font-weight:300;
+    font-weight: 300;
     margin-top: -5px;
     width: 60%;
 }
@@ -427,7 +422,7 @@ main {
     column-gap: 15px;
 }
 
-.game-btn button{
+.game-btn button {
     font-size: 17px;
     padding: 7px;
     transition: background-color 0.5s;
@@ -437,9 +432,229 @@ main {
     background-color: var(--orange);
 }
 
+/*********Log Game Form*********/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: var(--eerie-black);
+    margin: 5% auto 15% auto;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.log-title-year {
+    display: flex;
+}
+
+.log-title-year h3 {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-size: 40px;
+}
+
+.game-title {
+    margin-left: 30px;
+}
+
+.game-year {
+    margin-left: 15px;
+}
+
+.log-title-year .game-year {
+    color: var(--less-white);
+    font-weight: 400;
+}
+
+.log-rating-date {
+    margin-top: 20px;
+    display: flex;
+}
+
+.rating-container {
+    display: flex;
+    font-size: 25px;
+}
+
+.rating-container h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 30px;
+}
+
+
+.rating-group {
+    display: inline-flex;
+}
+
+
+.rating__icon {
+    pointer-events: none;
+}
+
+/* hide radio inputs */
+.rating__input {
+    position: absolute !important;
+    left: -9999px !important;
+}
+
+/* set icon padding and size */
+.rating__label {
+    cursor: pointer;
+    padding: 0 8px;
+    font-size: 30px;
+}
+
+/* add padding and positioning to half star labels */
+.rating__label--half {
+    margin-left: 5px;
+    padding-right: 0;
+    margin-right: -43px;
+    z-index: 2;
+}
+
+
+.rating__icon--star {
+    color: var(--safety-orange);
+}
+
+
+.rating__icon--none {
+    color: #eee;
+}
+
+/* if any input is checked, make its following siblings grey */
+.rating__input:checked ~ .rating__label .rating__icon--star {
+    color: #ddd;
+}
+
+/* make all stars orange on rating group hover */
+.rating-group:hover .rating__label .rating__icon--star,
+.rating-group:hover .rating__label--half .rating__icon--star {
+    color: var(--safety-orange);
+}
+
+/* make hovered input's following siblings grey on hover */
+.rating__input:hover ~ .rating__label .rating__icon--star,
+.rating__input:hover ~ .rating__label--half .rating__icon--star {
+    color: #ddd;
+}
+
+/* make none icon grey on rating group hover */
+.rating-group:hover
+    .rating__input--none:not(:hover)
+    + .rating__label
+    .rating__icon--none {
+    color: #eee;
+}
+
+.date-container {
+    display: flex;
+    margin-left: 15px;
+}
+
+.date-container h3 {
+    margin: 0px;
+    font-size: 30px;
+}
+
+.date-container input {
+    margin-left: 15px;
+}
+
+.date-picker {
+    background-color: var(--less-white);
+}
+.review {
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.review textarea {
+    background-color: var(--less-white);
+    color: var(--void-blue);
+    font-size: 25px;
+    width: 850px;
+    height: 300px;
+    padding: 12px;
+    resize: none;
+}
+
+.review textarea::placeholder {
+    font-size: 25px;
+    font-weight: 400;
+    color: var(--void-blue);
+}
+
+.log-btn {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.log-btn h2 {
+    margin: auto;
+}
+
+.log-btn button {
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px;
+    transition: background-color 0.5s;
+}
+
+.cancel-btn {
+    background-color: var(--void-blue);
+}
+
+.cancel-btn:hover {
+    background-color: var(--void-blue);
+    opacity: 0.9;
+}
+
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0);
+    }
+    to {
+        -webkit-transform: scale(1);
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
 /*****Profile Page*****/
 
-.profile-header, .favourite-games {
+.profile-header,
+.favourite-games {
     display: flex;
     margin-top: 70px;
     margin-left: 13.5%;
@@ -475,7 +690,7 @@ main {
     margin: auto;
 }
 
-.profile-name-btn button{
+.profile-name-btn button {
     margin-top: 10px;
     font-size: 15px;
     font-weight: 700;
@@ -493,14 +708,14 @@ main {
     padding: 0 20px;
 }
 
-.profile-stats h2{
+.profile-stats h2 {
     margin: auto;
     font-size: 75px;
     font-weight: 700;
     text-align: center;
 }
 
-.profile-stats h3{
+.profile-stats h3 {
     margin: auto;
     font-size: 35px;
     font-weight: 300;
@@ -517,7 +732,7 @@ main {
     text-transform: uppercase;
 }
 
-.favourite-games .header{
+.favourite-games .header {
     text-transform: uppercase;
     border-bottom: 1px solid var(--less-white);
 }
@@ -539,14 +754,14 @@ main {
     margin: auto;
     height: 100px;
 }
-.fav-game-card img{
+.fav-game-card img {
     height: 320px;
     border-radius: 10px;
     border: 2px solid transparent;
     transition: border 0.3s;
 }
 
-.fav-game-card img:hover{
+.fav-game-card img:hover {
     border: 2px solid var(--safety-orange);
 }
 
@@ -562,17 +777,17 @@ main {
     justify-content: space-between;
 }
 
-.edit-profile-container .header{
+.edit-profile-container .header {
     border-bottom: 1px solid var(--less-white);
     font-size: large;
 }
 
-.edit-profile-container .header h1{
+.edit-profile-container .header h1 {
     margin-bottom: 0px;
     font-weight: 400;
 }
 
-.edit-profile-container .content{
+.edit-profile-container .content {
     display: flex;
     margin-top: 50px;
 }
@@ -606,23 +821,21 @@ main {
     cursor: pointer;
 }
 
-
-.content .cards-image{
+.content .cards-image {
     display: grid;
     /* align-content: center; */
 }
 
-.cards-image .fav-cards{
+.cards-image .fav-cards {
     display: grid;
     height: 200px;
     text-transform: uppercase;
 }
 
-.fav-cards .fav-header{
+.fav-cards .fav-header {
     width: 640px;
     border-bottom: 1px solid var(--less-white);
 }
-
 
 .fav-header h3 {
     margin-bottom: 0px;
@@ -641,7 +854,7 @@ main {
     width: 100px;
 }
 
-.add-fav-card img{
+.add-fav-card img {
     width: 100px;
     border-radius: 5px;
 }
@@ -671,9 +884,9 @@ main {
 /*****Footer*****/
 
 .footer {
-    position:absolute;
-    bottom:0;
-    width:100%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     text-align: center;
     background-color: var(--void-blue);
     font-weight: 400;
