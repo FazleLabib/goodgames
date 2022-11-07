@@ -52,3 +52,4 @@ Route::get("/game/{id}", [HomeController::class, 'viewSpecificGame']);
 Route::get('logout',[UserController::class, 'logout']);
 Route::put('settings', [UserController::class, 'update']);
 Route::post('/game/{id}', [RatingController::class, 'log']);
+Route::get("profile", [RatingController::class, 'gameStats']);

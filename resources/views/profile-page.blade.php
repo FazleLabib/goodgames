@@ -27,7 +27,7 @@
             <div class="profile-stats">
                 <div class="games-played">
                     <a class="stat-home" href="home">
-                        <h2>200</h2>
+                        <h2>{{ $gameCount }}</h2>
                         <h3>games</h3>
                     </a>
                 </div>
