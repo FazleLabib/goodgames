@@ -29,6 +29,12 @@ class RatingController extends Controller
     function gameStats() {
         $id = Auth::User()->id;
         $gameCount = Rating::where('user_id', $id)->count();
-        return view('profile-page', ['gameCount' => $gameCount]);
+        $reviews = DB::table('games')
+        ->select('games.id','games.title','games.poster', 'games.year', 'ratings.rating', 'ratings.review', 'ratings.date')
+        ->join('ratings','ratings.game_id','=','games.id')
+        ->join('users', 'ratings.user_id', '=', 'users.id')
+        ->where('users.id', $id)
+        ->get();
+        return view('profile-page', compact('gameCount', 'reviews'));
     }
 }
