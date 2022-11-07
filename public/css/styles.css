@@ -471,6 +471,8 @@ main {
 }
 
 .log-game-year {
+    color: var(--less-white);
+    font-weight: 400;
     margin-left: 15px;
 }
 
