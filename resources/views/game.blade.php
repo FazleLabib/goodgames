@@ -39,16 +39,17 @@
         </div>
 
         <div id="id01" class="modal">
-            <form class="modal-content animate" action="#" method="post">
+            <form class="modal-content animate" action="/game/{{ $gameInfo['id'] }}" method="POST">
+                {{ csrf_field() }}
                 <div class="container">
                     <div class="log-title-year">
-                        <h3 class="game-title">{{ $gameInfo['title'] }}</h3>
-                        <h3 class="game-year">{{ $gameInfo['year'] }}</h3>
+                        <h3 class="log-game-title">{{ $gameInfo['title'] }}</h3>
+                        <h3 class="log-game-year">{{ $gameInfo['year'] }}</h3>
                     </div>
                     <div class="log-rating-date">
                         <div class="rating-container">
                             <h3>Rating</h3>
-                            <div id="half-stars-example">
+                            <div id="half-stars">
                                 <div class="rating-group">
                                     <input class="rating__input rating__input--none" checked name="rating2"
                                         id="rating2-0" value="0" type="radio" checked>
@@ -109,6 +110,8 @@
                     <div class="review">
                         <textarea name="review"placeholder="Write your review here"></textarea>
                     </div>
+                    <input name="user_id" type="hidden" value="{{Auth::User()->id}}">
+                    <input name="game_id" type="hidden" value="{{ $gameInfo['id'] }}">
                     <div class="log-btn">
                         <button type="submit">save</button>
                         <button type="button" onclick="document.getElementById('id01').style.display='none'"

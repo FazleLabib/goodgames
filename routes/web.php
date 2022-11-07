@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\RatingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,3 +51,4 @@ Route::get("home", [HomeController::class, 'show']);
 Route::get("/game/{id}", [HomeController::class, 'viewSpecificGame']);
 Route::get('logout',[UserController::class, 'logout']);
 Route::put('settings', [UserController::class, 'update']);
+Route::post('/game/{id}', [RatingController::class, 'log']);
