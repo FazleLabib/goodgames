@@ -815,7 +815,7 @@ main {
 
 .rp-review .rev-year{
     margin: 0px;
-    padding-left: 5px;
+    padding-left: 15px;
     font-weight: 400;
     font-size: 30px;
     color: var(--less-white);
