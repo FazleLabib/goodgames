@@ -363,7 +363,7 @@ main {
 /*****Game Info Page*****/
 
 .game-info {
-    border-bottom: 1px solid var(--less-white);
+    /* border-bottom: 1px solid var(--less-white); */
     margin-top: 1%;
     margin-left: 13.5%;
     margin-right: 13.5%;
@@ -653,6 +653,56 @@ main {
     }
 }
 
+/*****User Reviews*****/
+
+.user-reviews {
+    margin-left: 13.5%;
+    margin-right: 13.5%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.user-reviews .header {
+    width: 100%;
+    border-bottom: 1px solid var(--less-white);
+}
+
+.user-reviews .header h3 {
+    text-transform: uppercase;
+    margin-top: 0px;
+    padding-left: 24px;
+    margin-bottom: 0px;
+    font-weight: 400;
+    /* font-size: 30px; */
+}
+
+.user-info {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 24px;
+    align-items: center;
+}
+
+.user-info img {
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    height: 55px;
+}
+
+.user-info h3 {
+    margin-left: 20px;
+}
+
+.user-reviews p {
+    margin: 0px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 50px;
+}
+
+.user-reviews-border {
+    border-bottom: 1px solid var(--less-white);
+}
 /*****Profile Page*****/
 
 .profile-header,

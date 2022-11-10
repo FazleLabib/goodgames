@@ -99,17 +99,93 @@
                     <div class="review">
                         <textarea name="review"placeholder="Write your review here"></textarea>
                     </div>
-                    <input name="user_id" type="hidden" value="{{Auth::User()->id}}">
+                    <input name="user_id" type="hidden" value="{{ Auth::User()->id }}">
                     <input name="game_id" type="hidden" value="{{ $gameInfo['id'] }}">
                     <div class="log-btn">
                         <button type="submit">save</button>
                         <button type="button" onclick="document.getElementById('id01').style.display='none'"
-                        class="cancel-btn">Cancel</button>
+                            class="cancel-btn">Cancel</button>
                     </div>
                 </div>
             </form>
         </div>
-
+        <div class="user-reviews">
+            <div class="header">
+                <h3>user reviews</h3>
+            </div>
+            @foreach ($reviews as $review)
+                <div class="user-info">
+                    <img src="/images/{{ $review->image }}" alt="">
+                    <h3>Review by {{ $review->name }}</h3>
+                    <div id="half-stars">
+                        <div class="rv-rating-group">
+                            <span
+                                class="rv-rating__label rv-rating__label--half fa fa-star-half
+                        @if ($review->rating >= 0.5)
+                            checked
+                        @endif
+                        "></span>
+                            <span
+                                class="rv-rating__label fa fa-star
+                        @if ($review->rating >= 1)
+                            checked
+                        @endif
+                        "></span>
+                            <span
+                                class="rv-rating__label rv-rating__label--half fa fa-star-half
+                        @if ($review->rating >= 1.5)
+                            checked
+                        @endif
+                        "></span>
+                            <span
+                                class="rv-rating__label fa fa-star
+                        @if ($review->rating >= 2)
+                            checked
+                        @endif
+                        "></span>
+                            <span
+                                class="rv-rating__label rv-rating__label--half fa fa-star-half
+                        @if ($review->rating >= 2.5)
+                            checked
+                        @endif
+                        "></span>
+                            <span
+                                class="rv-rating__label fa fa-star
+                        @if ($review->rating >= 3)
+                            checked
+                        @endif
+                        "></span>
+                            <span
+                                class="rv-rating__label rv-rating__label--half fa fa-star-half
+                        @if ($review->rating >= 3.5)
+                            checked
+                        @endif
+                        "></span>
+                            <span
+                                class="rv-rating__label fa fa-star
+                        @if ($review->rating >= 4)
+                            checked
+                        @endif
+                        "></span>
+                            <span
+                                class="rv-rating__label rv-rating__label--half fa fa-star-half
+                        @if ($review->rating >= 4.5)
+                            checked
+                        @endif
+                        "></span>
+                            <span
+                                class="rv-rating__label fa fa-star
+                        @if ($review->rating >= 5)
+                            checked
+                        @endif
+                        "></span>
+                        </div>
+                    </div>
+                </div>
+                <p>{{ $review->review }}</p>
+                <div class="user-reviews-border"></div>
+            @endforeach
+        </div>
         <script>
             // Get the modal
             var modal = document.getElementById('id01');
