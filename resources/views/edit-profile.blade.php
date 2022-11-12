@@ -29,38 +29,51 @@
                         <button class="save-btn">save changes</button>
                     </form>
                 </div>
-                <div class="cards-image">
-                    <div class="fav-cards">
-                        <div class="fav-header">
-                            <h3>add favourite games</h3>
-                        </div>
-                        <div class="add-fav-grid">
-                            <div class="add-fav-card">
-                                <a href="#">
-                                    <img src="images/default.jpg" alt="">
-                                </a>
+                <div class="add-fav">
+                    <div class="cards-image">
+                        <div class="fav-cards">
+                            <div class="fav-header">
+                                <h3>add favourite games</h3>
                             </div>
-                            <div class="add-fav-card">
-                                <a href="#">
-                                    <img src="images/default.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="add-fav-card">
-                                <a href="#">
-                                    <img src="images/default.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="add-fav-card">
-                                <a href="#">
-                                    <img src="images/default.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="add-fav-card">
-                                <a href="#">
-                                    <img src="images/default.jpg" alt="">
-                                </a>
+                            <div class="add-fav-grid">
+                                @foreach ($favs as $fav)
+                                    <div class="add-fav-card">
+                                        <img src="images/{{ $fav->poster }}" alt="">
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
+                    </div>
+                    <div class="search-fav">
+                        <form action="">
+                            <div class="search-form">
+                                <input type="search" name="search" value="{{ $search }}" onfocus="this.value=''"
+                                    placeholder="Find a Game">
+                                <button class="search-btn">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="played-games">
+                        <li class="game-box">
+                            @foreach ($games as $game)
+                                <ul>
+                                    <h3>{{ $game->title }} ({{ $game->year }}) by {{ $game->developer }}</h3>
+                                    @if ($game->favorite_flag == 0)
+                                        <a href="/add-fav/{{ $game->id }}">
+                                            @if ($favCount != 5)
+                                                <button class="add-btn">add</button>
+                                            @else
+                                                <button class="add-btn" disabled>add</button>
+                                            @endif
+                                        </a>
+                                    @else
+                                        <a href="/remove-fav/{{ $game->id }}">
+                                            <button class="remove-btn">remove</button>
+                                        </a>
+                                    @endif
+                                </ul>
+                            @endforeach
+                        </li>
                     </div>
                 </div>
             </div>

@@ -34,33 +34,22 @@
             <div class="header">
                 <h3>favourite games</h3>
             </div>
-            <div class="fav-games-grid">
-                <div class="fav-game-card">
-                    <a href="#">
-                        <img src="images/Witcher 3.png" alt="">
-                    </a>
+            @if (count($favs) == 0)
+                <div class="add-fav-prompt">
+                    <h3>Select your</h3>
+                    <a href="settings">favorite games here!</a>
                 </div>
-                <div class="fav-game-card">
-                    <a href="#">
-                        <img src="images/discoelysium.png" alt="">
-                    </a>
+            @else
+                <div class="fav-games-grid">
+                    @foreach ($favs as $fav)
+                        <div class="fav-game-card">
+                            <a href="/game/{{ $fav->id }}">
+                                <img src="images/{{ $fav->poster }}" alt="">
+                            </a>
+                        </div>
+                    @endforeach
                 </div>
-                <div class="fav-game-card">
-                    <a href="#">
-                        <img src="images/godofwar.png" alt="">
-                    </a>
-                </div>
-                <div class="fav-game-card">
-                    <a href="#">
-                        <img src="images/eldenring.png" alt="">
-                    </a>
-                </div>
-                <div class="fav-game-card">
-                    <a href="#">
-                        <img src="images/hollowknight.png" alt="">
-                    </a>
-                </div>
-            </div>
+            @endif
         </div>
         <div class="recently-played">
             <div class="header">
@@ -79,46 +68,36 @@
                         <div class="rev-rating-date">
                             <div id="half-stars">
                                 <div class="rv-rating-group">
-                                    <span class="rv-rating__label rv-rating__label--half fa fa-star-half
-                                    @if ($review->rating >= 0.5)
-                                        checked
-                                    @endif"></span>
-                                    <span class="rv-rating__label fa fa-star
-                                    @if ($review->rating >= 1)
-                                        checked
-                                    @endif"></span>
-                                    <span class="rv-rating__label rv-rating__label--half fa fa-star-half
-                                    @if ($review->rating >= 1.5)
-                                        checked
-                                    @endif"></span>
-                                    <span class="rv-rating__label fa fa-star
-                                    @if ($review->rating >= 2)
-                                        checked
-                                    @endif"></span>
-                                    <span class="rv-rating__label rv-rating__label--half fa fa-star-half
-                                    @if ($review->rating >= 2.5)
-                                        checked
-                                    @endif"></span>
-                                    <span class="rv-rating__label fa fa-star
-                                    @if ($review->rating >= 3)
-                                        checked
-                                    @endif"></span>
-                                    <span class="rv-rating__label rv-rating__label--half fa fa-star-half
-                                    @if ($review->rating >= 3.5)
-                                        checked
-                                    @endif"></span>
-                                    <span class="rv-rating__label fa fa-star
-                                    @if ($review->rating >= 4)
-                                        checked
-                                    @endif"></span>
-                                    <span class="rv-rating__label rv-rating__label--half fa fa-star-half
-                                    @if ($review->rating >= 4.5)
-                                        checked
-                                    @endif"></span>
-                                    <span class="rv-rating__label fa fa-star
-                                    @if ($review->rating >= 5)
-                                        checked
-                                    @endif"></span>
+                                    <span
+                                        class="rv-rating__label rv-rating__label--half fa fa-star-half
+                                    @if ($review->rating >= 0.5) checked @endif"></span>
+                                    <span
+                                        class="rv-rating__label fa fa-star
+                                    @if ($review->rating >= 1) checked @endif"></span>
+                                    <span
+                                        class="rv-rating__label rv-rating__label--half fa fa-star-half
+                                    @if ($review->rating >= 1.5) checked @endif"></span>
+                                    <span
+                                        class="rv-rating__label fa fa-star
+                                    @if ($review->rating >= 2) checked @endif"></span>
+                                    <span
+                                        class="rv-rating__label rv-rating__label--half fa fa-star-half
+                                    @if ($review->rating >= 2.5) checked @endif"></span>
+                                    <span
+                                        class="rv-rating__label fa fa-star
+                                    @if ($review->rating >= 3) checked @endif"></span>
+                                    <span
+                                        class="rv-rating__label rv-rating__label--half fa fa-star-half
+                                    @if ($review->rating >= 3.5) checked @endif"></span>
+                                    <span
+                                        class="rv-rating__label fa fa-star
+                                    @if ($review->rating >= 4) checked @endif"></span>
+                                    <span
+                                        class="rv-rating__label rv-rating__label--half fa fa-star-half
+                                    @if ($review->rating >= 4.5) checked @endif"></span>
+                                    <span
+                                        class="rv-rating__label fa fa-star
+                                    @if ($review->rating >= 5) checked @endif"></span>
                                 </div>
                             </div>
                             <h3>Played on {{ $review->date }}</h3>

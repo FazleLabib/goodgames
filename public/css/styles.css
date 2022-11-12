@@ -801,6 +801,21 @@ main {
     font-weight: 400;
 }
 
+.favourite-games .add-fav-prompt {
+    display: flex;
+    height: 100px;
+}
+
+.favourite-games .add-fav-prompt h3 {
+    color: var(--less-white);
+}
+
+.favourite-games .add-fav-prompt h3, .favourite-games .add-fav-prompt a{
+    text-transform: none;
+    font-size: 20px;
+    margin: 10 5 10 0px;
+}
+
 .fav-games-grid {
     display: grid;
     grid-template-columns: repeat(5, 270px);
@@ -811,7 +826,7 @@ main {
 
 .fav-game-card {
     margin: auto;
-    height: 400px;
+    height: 380px;
 }
 .fav-game-card img {
     height: 320px;
@@ -1018,6 +1033,76 @@ main {
 .add-fav-card img {
     width: 100px;
     border-radius: 5px;
+}
+
+.add-fav {
+    display: flex;
+    flex-direction: column;
+}
+.add-fav .search-fav {
+    display: flex;
+    align-self: center;
+}
+.add-fav .search-form input {
+    width: 515px;
+}
+.add-fav .search-form button {
+    margin-right: 0px;
+}
+
+.played-games {
+    width: 595px;
+    height: 300px;
+    display: grid;
+    align-self: center;
+    overflow-y: auto
+}
+.played-games li {
+    list-style-type: none;
+}
+
+.played-games .game-box {
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.played-games .game-box ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    background-color: var(--void-blue);
+}
+
+.played-games .game-box ul:hover {
+    background-color: var(--black-olive);
+}
+.played-games .game-box h3{
+    margin: 10px;
+    margin-left: 20px;
+    font-weight: 400;
+}
+
+.played-games .game-box button {
+    width: 70px;
+    height: 30px;
+    margin: 10px;
+    margin-right: 20px;
+    background-color: var(--less-white);
+    color: var(--void-blue);
+}
+
+.played-games .game-box button:is([disabled]) {
+    border: 1px solid var(--less-white);
+    color: white;
+    background-color: transparent;
+}
+
+.played-games .game-box button:hover:not([disabled]) {
+    opacity: 90%;
 }
 
 /* .cards-image .profile-pic{
