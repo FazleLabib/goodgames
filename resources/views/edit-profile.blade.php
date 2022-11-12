@@ -62,14 +62,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="profile-pic">
-                        <div class = "add-pic">
-    <img src="images/{{ Auth::User()->image }}" alt="">
-  </div>
-                        <a href="">
-                            <h3>Change Profile Photo</h3>
-                        </a>
-                    </div> -->
                 </div>
             </div>
         </div>
