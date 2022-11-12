@@ -116,7 +116,8 @@
             @foreach ($reviews as $review)
                 <div class="user-info">
                     <img src="/images/{{ $review->image }}" alt="">
-                    <h3>Review by {{ $review->name }}</h3>
+                    <h3 class="review-by">Review by</h3>
+                    <h3 class="reviewer-name">{{ $review->name }}</h3>
                     <div id="half-stars">
                         <div class="rv-rating-group">
                             <span

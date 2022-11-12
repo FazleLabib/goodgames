@@ -689,8 +689,13 @@ main {
     height: 55px;
 }
 
-.user-info h3 {
+.user-info .review-by {
     margin-left: 20px;
+    color: var(--less-white);
+}
+
+.user-info .reviewer-name {
+    margin-left: 5px;
 }
 
 .user-reviews p {
