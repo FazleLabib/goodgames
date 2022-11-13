@@ -56,3 +56,5 @@ Route::get("profile", [RatingController::class, 'gameStats']);
 Route::get("settings", [RatingController::class, 'show']);
 Route::get("/add-fav/{id}", [RatingController::class, 'addFav']);
 Route::get("/remove-fav/{id}", [RatingController::class, 'removeFav']);
+Route::put('/profile/edit-log/{id}', [RatingController::class, 'editLog']);
+Route::get('/profile/delete-log/{id}', [RatingController::class, 'deleteLog']);

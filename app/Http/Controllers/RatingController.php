@@ -31,7 +31,7 @@ class RatingController extends Controller
         $id = Auth::User()->id;
         $gameCount = Rating::where('user_id', $id)->count();
         $reviews = DB::table('games')
-        ->select('games.id','games.title','games.poster', 'games.year', 'ratings.rating', 'ratings.review', 'ratings.date')
+        ->select('ratings.id', 'games.title','games.poster', 'games.year', 'ratings.rating', 'ratings.review', 'ratings.date')
         ->join('ratings','ratings.game_id','=','games.id')
         ->join('users', 'ratings.user_id', '=', 'users.id')
         ->where('users.id', $id)
@@ -102,5 +102,24 @@ class RatingController extends Controller
     function removeFav($id) {
         DB::update('update ratings set favorite_flag = 0 where game_id = ?', [$id]);
         return redirect('settings')->with('success', 'This game was removed from your favorite list');
+    }
+
+    function editLog(Request $request, $id) {
+        $values = [
+            'rating' => $request->input('rating2'),
+            'review' => $request->input('review'),
+            'date' => $request->input('log-date')
+        ];
+
+        DB::table('ratings')
+        ->where('id', $id)
+        ->update($values);
+        return redirect('profile')->with('success', "This game's log info was successfully edited");
+
+    }
+
+    function deleteLog($id) {
+        DB::table('ratings')->where('id', $id)->delete();
+        return redirect('profile')->with('success', "This game's log info was successfully deleted");
     }
 }
