@@ -378,7 +378,8 @@ main {
 }
 
 .info-container img {
-    width: 24rem;
+    aspect-ratio: 3/4;
+    height: 350px;
     border-radius: 5px;
 }
 
