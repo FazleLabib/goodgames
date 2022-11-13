@@ -91,7 +91,6 @@ class RatingController extends Controller
         ->where(function($query) {
             $query->where('ratings.favorite_flag', '1');
         })->count();
-        dump($favCount);
         return view('edit-profile', compact('games', 'search', 'favs', 'favCount'));
     }
 
