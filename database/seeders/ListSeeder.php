@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class PlaylistSeeder extends Seeder
+class ListSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +15,7 @@ class PlaylistSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('playlists')->insert([
+        DB::table('lists')->insert([
             'user_id'=>'1',
             'name' => 'name',
             'description'=>'This is a description'

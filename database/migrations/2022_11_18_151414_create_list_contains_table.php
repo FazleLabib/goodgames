@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('playlists', function (Blueprint $table) {
+        Schema::create('list_contains', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('playlist_id');
             $table->integer('user_id');
-            $table->string('name');
-            $table->text('description');
+            $table->integer('game_id');
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('playlists');
+        Schema::dropIfExists('list_contains');
     }
 };
