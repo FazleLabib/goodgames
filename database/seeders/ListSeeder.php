@@ -15,7 +15,7 @@ class ListSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('lists')->insert([
+        DB::table('game_lists')->insert([
             'user_id'=>'1',
             'name' => 'name',
             'description'=>'This is a description'
