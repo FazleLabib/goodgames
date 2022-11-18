@@ -11,7 +11,7 @@
             </div>
             <div class="content">
                 <div class="list-form">
-                    <form class="form" method="POST" action="">
+                    <form class="form" method="POST" action="/lists/new">
                         <div class="input">
                             {{ @csrf_field() }}
                             <h2>Name of List</h2>

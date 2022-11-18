@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RatingController;
+use App\Http\Controllers\ListController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -62,3 +63,4 @@ Route::get("/add-fav/{id}", [RatingController::class, 'addFav']);
 Route::get("/remove-fav/{id}", [RatingController::class, 'removeFav']);
 Route::put('/profile/edit-log/{id}', [RatingController::class, 'editLog']);
 Route::get('/profile/delete-log/{id}', [RatingController::class, 'deleteLog']);
+Route::post('/lists/new', [ListController::class, 'createList']);
