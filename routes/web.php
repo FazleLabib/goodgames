@@ -42,6 +42,10 @@ Route::get('/settings', function () {
     return view('edit-profile');
 });
 
+Route::get('/lists/new', function () {
+    return view('new-list');
+});
+
 Route::get("login", [UserController::class, 'index']);
 Route::post("checklogin", [UserController::class, 'checklogin']);
 Route::get('register', [RegisterController::class, 'index']);

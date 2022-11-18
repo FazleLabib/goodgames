@@ -980,7 +980,7 @@ main {
 
 /*****Edit Profile Page*****/
 
-.edit-profile-container {
+.edit-profile-container, .new-list-container {
     display: flex;
     flex-direction: column;
     margin-top: 70px;
@@ -990,31 +990,31 @@ main {
     justify-content: space-between;
 }
 
-.edit-profile-container .header {
+.edit-profile-container .header, .new-list-container .header {
     border-bottom: 1px solid var(--less-white);
     font-size: large;
 }
 
-.edit-profile-container .header h1 {
+.edit-profile-container .header h1, .new-list-container .header h1 {
     margin-bottom: 0px;
     font-weight: 400;
 }
 
-.edit-profile-container .content {
+.edit-profile-container .content, .new-list-container .content {
     display: flex;
     margin-top: 50px;
 }
 
-.content .info-form {
+.content .info-form, .content .list-form {
     margin-right: 160px;
 }
 
-.info-form h2 {
+.info-form h2, .list-form h2 {
     margin-bottom: 5px;
     font-weight: 400;
 }
 
-.info-form input {
+.info-form input, .list-form input {
     background: var(--less-white);
     width: 500px;
     margin: 0 0 15px;
@@ -1163,6 +1163,23 @@ main {
     display: flex;
     justify-content: center;
 } */
+
+/*****New List*****/
+/* Some css elements of this page are in edit-profile section */
+.new-list-container textarea {
+    background-color: var(--less-white);
+    color: var(--void-blue);
+    font-size: 25px;
+    width: 1265px;
+    height: 300px;
+    padding: 12px;
+    resize: none;
+}
+
+.new-list-btn button {
+    width: 100px;
+}
+
 
 /*****Footer*****/
 
