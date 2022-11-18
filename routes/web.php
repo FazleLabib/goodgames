@@ -43,6 +43,10 @@ Route::get('/settings', function () {
     return view('edit-profile');
 });
 
+Route::get('/lists', function () {
+    return view('lists');
+});
+
 Route::get('/lists/new', function () {
     return view('new-list');
 });
@@ -63,4 +67,5 @@ Route::get("/add-fav/{id}", [RatingController::class, 'addFav']);
 Route::get("/remove-fav/{id}", [RatingController::class, 'removeFav']);
 Route::put('/profile/edit-log/{id}', [RatingController::class, 'editLog']);
 Route::get('/profile/delete-log/{id}', [RatingController::class, 'deleteLog']);
+Route::get("lists", [ListController::class, 'show']);
 Route::post('/lists/new', [ListController::class, 'createList']);

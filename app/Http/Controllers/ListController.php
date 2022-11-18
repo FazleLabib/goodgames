@@ -13,6 +13,12 @@ use Illuminate\support\Facades\Redirect;
 class ListController extends Controller
 {
     //
+
+    function show() {
+        $lists = GameList::all();
+        return view('lists', compact('lists'));
+    }
+
     function createList(Request $request) {
         $id = Auth::User()->id;
         $values = array(
