@@ -24,7 +24,7 @@
                 </div>
                 <div class="profile-lists">
                     <a href="lists">
-                        <h2>5</h2>
+                        <h2>{{ $listCount }}</h2>
                         <h3>lists</h3>
                     </a>
                 </div>

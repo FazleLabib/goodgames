@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Rating;
 use App\Models\Game;
+use App\Models\GameList;
 use Illuminate\support\Facades\DB;
 use Illuminate\support\Facades\Redirect;
 
@@ -30,6 +31,7 @@ class RatingController extends Controller
     function gameStats() {
         $id = Auth::User()->id;
         $gameCount = Rating::where('user_id', $id)->count();
+        $listCount = GameList::where('user_id', $id)->count();
         $reviews = DB::table('games')
         ->select('ratings.id', 'games.title','games.poster', 'games.year', 'ratings.rating', 'ratings.review', 'ratings.date')
         ->join('ratings','ratings.game_id','=','games.id')
@@ -45,8 +47,7 @@ class RatingController extends Controller
         ->where(function($query) {
             $query->where('ratings.favorite_flag', '1');
         })->get();
-
-        return view('profile-page', compact('gameCount', 'reviews', 'favs'));
+        return view('profile-page', compact('gameCount', 'reviews', 'favs', 'listCount'));
     }
 
     function show(Request $request) {
