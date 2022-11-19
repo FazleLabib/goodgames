@@ -14,9 +14,28 @@ class ListController extends Controller
 {
     //
 
-    function show() {
-        $lists = GameList::all();
-        return view('lists', compact('lists'));
+    function show(Request $request) {
+
+        $search = $request["search"] ?? "";
+        if($search != "") {
+
+            $lists = DB::table('game_lists')
+            ->select('game_lists.id as list_id', 'game_lists.user_id', 'game_lists.name as title', 'game_lists.description', 'users.name')
+            ->join('users', 'game_lists.user_id', '=', 'users.id')
+            ->where(function($query) use ($search) {
+                $query->where('game_lists.name', 'LIKE', "%$search%");
+            })->get();
+
+        }
+        else {
+
+            $lists = DB::table('game_lists')
+            ->select('game_lists.id as list_id', 'game_lists.user_id', 'game_lists.name as title', 'game_lists.description', 'users.name')
+            ->join('users', 'game_lists.user_id', '=', 'users.id')
+            ->get();
+
+        }
+        return view('lists', compact('lists', 'search'));
     }
 
     function createList(Request $request) {
@@ -27,7 +46,7 @@ class ListController extends Controller
             'description' => $request->input('description')
     	);
 
-    	DB::table('lists')->insert($values);
+    	DB::table('game_lists')->insert($values);
 
         return redirect('lists')->with('success', 'You have successfully created a list');
     }

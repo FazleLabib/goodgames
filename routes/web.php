@@ -43,9 +43,9 @@ Route::get('/settings', function () {
     return view('edit-profile');
 });
 
-Route::get('/lists', function () {
-    return view('lists');
-});
+// Route::get('/lists', function () {
+//     return view('lists');
+// });
 
 Route::get('/lists/new', function () {
     return view('new-list');
@@ -61,7 +61,7 @@ Route::get("/game/{id}", [HomeController::class, 'viewSpecificGame']);
 Route::get('logout',[UserController::class, 'logout']);
 Route::put('settings', [UserController::class, 'update']);
 Route::post('/game/{id}', [RatingController::class, 'log']);
-Route::get("profile", [RatingController::class, 'gameStats']);
+Route::get("profile*", [RatingController::class, 'gameStats']);
 Route::get("settings", [RatingController::class, 'show']);
 Route::get("/add-fav/{id}", [RatingController::class, 'addFav']);
 Route::get("/remove-fav/{id}", [RatingController::class, 'removeFav']);
