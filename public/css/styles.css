@@ -223,11 +223,13 @@ main {
     font-size: 50px;
 }
 
-.welcome-msg a, .list-welcome-msg a {
+.welcome-msg a,
+.list-welcome-msg a {
     transition: color 0.3s;
 }
 
-.welcome-msg a:hover, .list-welcome-msg a:hover {
+.welcome-msg a:hover,
+.list-welcome-msg a:hover {
     color: var(--safety-orange);
 }
 
@@ -1228,7 +1230,7 @@ main {
     align-items: center;
 }
 
-.poster-collection a{
+.poster-collection a {
     width: 292px;
     display: grid;
     grid-template-columns: repeat(5, 50px);
@@ -1253,7 +1255,8 @@ main {
     margin-left: 20px;
 }
 
-.list-content .info h3, .list-content .info p {
+.list-content .info h3,
+.list-content .info p {
     margin: 0px;
     margin-bottom: 5px;
 }
@@ -1269,6 +1272,140 @@ main {
 .list-content .info p {
     color: var(--less-white);
 }
+
+/*****Specific List Page*****/
+
+.specific-list {
+    margin-left: 15.5%;
+    margin-right: 15.5%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.specific-list .header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-left: 24px;
+    border-bottom: 1px solid var(--less-white);
+}
+
+.specific-list .edit-option {
+    margin-left: 20px;
+    font-size: 30px;
+}
+
+.specific-list .edit-icon {
+    color: white;
+    transition: color 0.3s;
+}
+
+.specific-list .edit-icon:hover {
+    cursor: pointer;
+    color: var(--safety-orange);
+}
+
+.specific-list p {
+    padding-left: 24px;
+    font-size: 20px;
+}
+
+/*****Edit List Page*****/
+
+.new-list-container .content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.edit-list-search {
+    margin-top: 20px;
+}
+
+.searched-box {
+    height: 200px;
+    overflow-y: auto;
+}
+.searched-games {
+    background-color: var(--void-blue);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.searched-games:hover {
+    background-color: var(--black-olive);
+}
+
+.searched-games h3 {
+    margin: 10px;
+    margin-left: 10px;
+    margin-left: 20px;
+    font-weight: 400;
+}
+
+.searched-games button {
+    width: 70px;
+    height: 30px;
+    margin: 10px;
+    margin-right: 10px;
+    margin-right: 20px;
+    background-color: var(--less-white);
+    color: var(--void-blue);
+}
+
+.searched-games button:hover {
+    opacity: 0.9;
+}
+
+.added-games h3{
+    margin: 0px;
+    margin-bottom: 5px;
+}
+
+.added-games .game-container {
+    background-color: var(--void-blue);
+    display: flex;
+    justify-content: space-between;
+}
+
+.added-games .game-container:hover {
+    background-color: var(--black-olive);
+}
+
+.added-games .info, .added-games .remove-game{
+    display: flex;
+    margin: 10px;
+    align-items: center;
+}
+.added-games .info img {
+    border: 1px solid var(--less-white);
+    height: 100px;
+    border-radius: 5px;
+}
+
+.added-games .info .details {
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.added-games .info .details .year {
+    color: var(--less-white);
+}
+
+.added-games .remove-game {
+    padding: 20px;
+    color: var(--less-white);
+    font-size: 50px;
+    transition: color 0.3s;
+}
+
+.added-games .remove-game:hover {
+    cursor: pointer;
+    color: var(--imperial-red);
+}
+
 
 /*****Footer*****/
 

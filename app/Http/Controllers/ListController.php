@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Rating;
 use App\Models\Game;
 use App\Models\GameList;
+use App\Models\ListContain;
 use Illuminate\support\Facades\DB;
 use Illuminate\support\Facades\Redirect;
 
@@ -78,7 +79,59 @@ class ListController extends Controller
         else{
             $games = "";
         }
-        return view('edit-list', compact('listInfo', 'games', 'search'));
+
+        $gamesInList = DB::table('game_lists')
+        ->select('game_lists.id as list_id',
+        'list_contains.list_id', 'list_contains.game_id',
+        'games.id as game_id', 'games.poster', 'games.title', 'games.year')
+        ->join('list_contains', 'list_contains.list_id', '=', 'game_lists.id')
+        ->join('games', 'list_contains.game_id', '=', 'games.id')
+        ->where('game_lists.id', '=', $id)
+        ->get();
+        return view('edit-list', compact('listInfo', 'games', 'search', 'gamesInList'));
+    }
+
+    function editListInfo(Request $request, $id) {
+
+        $values = [
+            'name' => $request->input('name'),
+            'description' => $request->input('description')
+        ];
+
+        DB::table('game_lists')
+        ->where('id', $id)
+        ->update($values);
+
+        return Redirect::back()->with('success', "This list's info was successfully updated");
+
+    }
+
+    function addToList(Request $request, $id) {
+        $user_id = Auth::User()->id;
+        $list_id = $id;
+        $game_id = $request->game_id;
+
+        DB::insert('insert into list_contains (list_id, user_id, game_id) values (?, ?, ?)', [$list_id, $user_id, $game_id]);
+        return Redirect::back()->with('success', 'This game was added to your list');
+    }
+
+    function removeFromList(Request $request, $id) {
+        $user_id = Auth::User()->id;
+        $list_id = $id;
+        $game_id = $request->game_id;
+
+        // DB::table('list_contains')
+        // ->where('list_id', $list_id)
+        // ->where('game_id', $game_id)
+        // ->delete();
+
+        ListContain::where([
+            'list_id' => $list_id,
+            'game_id' => $game_id
+        ])
+        ->delete();
+
+        return Redirect::back()->with('success', 'This game was removed from your list');
     }
 
 }
