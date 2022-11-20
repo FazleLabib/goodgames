@@ -8,11 +8,13 @@
         <div class="specific-list">
             <div class="header">
                 <h1>{{ $listInfo->name }}</h1>
-                <div class="edit-option">
-                    <a href="/lists/{{ $listInfo->id }}/edit">
-                        <span class=" edit-icon fa fa-pencil"></span>
-                    </a>
-                </div>
+                @if ($listInfo->user_id == Auth::user()->id)
+                    <div class="edit-option">
+                        <a href="/lists/{{ $listInfo->id }}/edit">
+                            <span class=" edit-icon fa fa-pencil"></span>
+                        </a>
+                    </div>
+                @endif
             </div>
             <div class="description">
                 <p>{{ $listInfo->description }}</p>
