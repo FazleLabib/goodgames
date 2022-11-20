@@ -50,4 +50,35 @@ class ListController extends Controller
 
         return redirect('lists')->with('success', 'You have successfully created a list');
     }
+
+    function viweSpecificList($id) {
+        $listInfo = GameList::where('id',$id)->firstorFail();
+
+        $games = DB::table('game_lists')
+        ->select('game_lists.id as list_id',
+        'list_contains.list_id', 'list_contains.game_id',
+        'games.id as game_id', 'games.poster')
+        ->join('list_contains', 'list_contains.list_id', '=', 'game_lists.id')
+        ->join('games', 'list_contains.game_id', '=', 'games.id')
+        ->where('game_lists.id', '=', $id)
+        ->get();
+        return view('list-page', compact('listInfo', 'games'));
+    }
+
+    function showListInfo(Request $request, $id) {
+        $listInfo = GameList::where('id',$id)->firstorFail();
+        $search = $request["search"] ?? "";
+        if($search != "") {
+            $games = Game::where('title', 'LIKE', "%$search%")
+                    ->orwhere('developer', 'LIKE', "%$search%")
+                    ->orwhere('genre', 'LIKE', "%$search%")
+                    ->orwhere('platform', 'LIKE', "%$search%")
+                    ->orwhere('year', 'LIKE', "%$search%")-> get();
+        }
+        else{
+            $games = "";
+        }
+        return view('edit-list', compact('listInfo', 'games', 'search'));
+    }
+
 }
