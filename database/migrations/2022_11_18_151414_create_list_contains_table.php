@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('list_contains', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('playlist_id');
+            $table->integer('list_id');
             $table->integer('user_id');
             $table->integer('game_id');
         });
