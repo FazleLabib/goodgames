@@ -1403,13 +1403,16 @@ main {
 }
 
 .added-games .remove-game {
-    padding: 20px;
+    padding: 10px;
+}
+
+.added-games .remove-game span {
     color: var(--less-white);
     font-size: 50px;
     transition: color 0.3s;
 }
 
-.added-games .remove-game:hover {
+.added-games .remove-game span:hover {
     cursor: pointer;
     color: var(--imperial-red);
 }
