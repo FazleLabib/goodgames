@@ -36,7 +36,23 @@ class ListController extends Controller
             ->get();
 
         }
-        return view('lists', compact('lists', 'search'));
+        $games = [];
+
+        foreach($lists as $list){
+            $game = DB::table('games')
+            ->select('games.id', 'games.poster',
+            'game_lists.id',
+            'list_contains.list_id', 'list_contains.game_id')
+            ->join('list_contains', 'list_contains.game_id', '=', 'games.id')
+            ->join('game_lists', 'game_lists.id', '=', 'list_contains.list_id')
+            ->where('list_contains.list_id', '=', $list->list_id)
+            ->take(5)
+            ->get();
+
+            array_push($games,$game);
+        }
+
+        return view('lists', compact('lists', 'search', 'games'));
     }
 
     function createList(Request $request) {
@@ -119,11 +135,6 @@ class ListController extends Controller
         $user_id = Auth::User()->id;
         $list_id = $id;
         $game_id = $request->game_id;
-
-        // DB::table('list_contains')
-        // ->where('list_id', $list_id)
-        // ->where('game_id', $game_id)
-        // ->delete();
 
         ListContain::where([
             'list_id' => $list_id,
