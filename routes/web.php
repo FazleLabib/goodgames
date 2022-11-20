@@ -74,3 +74,4 @@ Route::get("/lists/{id}/edit", [ListController::class, 'showListInfo']);
 Route::put("/lists/{id}/edit", [ListController::class, 'editListInfo']);
 Route::get("/lists/{id}/edit/addtoList", [ListController::class, 'addtoList']);
 Route::get("/lists/{id}/edit/removeFromList", [ListController::class, 'removeFromList']);
+Route::get("/lists/{id}/edit/removeList", [ListController::class, 'removeList']);

@@ -145,4 +145,14 @@ class ListController extends Controller
         return Redirect::back()->with('success', 'This game was removed from your list');
     }
 
+    function removeList($id) {
+        GameList::where(['id' => $id])
+        ->delete();
+
+        ListContain::where(['list_id' => $id])
+        ->delete();
+
+        return redirect('lists')->with('success', 'This list was successfully removed');
+    }
+
 }

@@ -24,6 +24,9 @@
                         </div>
                         <div class="new-list-btn">
                             <button class="save-btn">save</button>
+                            <a href="/lists/{{ $listInfo->id }}/edit/removeList">
+                                <button type="button" class="delete-btn">delete</button>
+                            </a>
                         </div>
                     </form>
                 </div>
