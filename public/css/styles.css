@@ -827,7 +827,7 @@ main {
 .favourite-games .add-fav-prompt a {
     text-transform: none;
     font-size: 20px;
-    margin: 10 5 10 0px;
+    margin: 10px 5px 10px 0px;
 }
 
 .fav-games-grid {
