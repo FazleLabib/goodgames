@@ -7,14 +7,42 @@
         </section>
         <div class="specific-list">
             <div class="header">
-                <h1>{{ $listInfo->name }}</h1>
-                @if ($listInfo->user_id == Auth::user()->id)
-                    <div class="edit-option">
-                        <a href="/lists/{{ $listInfo->id }}/edit">
-                            <span class=" edit-icon fa fa-pencil"></span>
-                        </a>
-                    </div>
-                @endif
+                <div class="list-title-edit">
+                    <h2>{{ $listInfo->name }}</h2>
+                    @if ($listInfo->user_id == Auth::user()->id)
+                        <div class="edit-option">
+                            <a href="/lists/{{ $listInfo->id }}/edit">
+                                <span class=" edit-icon fa fa-pencil"></span>
+                            </a>
+                        </div>
+                    @endif
+                </div>
+                <ul>
+                    <li id="menu-name"><a href="?search=">RESET</a></li>
+                    <li id="menu-name"><a>YEAR</a>
+                        <ul>
+                            @foreach ($years as $year)
+                                <li> <a class="item" href="?search={{ $year->year }}">{{ $year->year }}</a> </li>
+                            @endforeach
+                        </ul>
+                    </li>
+                    <li id="menu-name"><a>GENRE</a>
+                        <ul>
+                            @foreach ($genres as $genre)
+                                <li><a class="item" href="?search={{ $genre->genre }}">{{ $genre->genre }}</a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </li>
+                    <li id="menu-name"><a>PLATFORM</a>
+                        <ul>
+                            @foreach ($platforms as $platform)
+                                <li><a class="item"
+                                        href="?search={{ $platform->platform }}">{{ $platform->platform }}</a></li>
+                            @endforeach
+                        </ul>
+                    </li>
+                </ul>
             </div>
             <div class="description">
                 <p>{{ $listInfo->description }}</p>

@@ -68,18 +68,58 @@ class ListController extends Controller
         return redirect('lists')->with('success', 'You have successfully created a list');
     }
 
-    function viweSpecificList($id) {
+    function viweSpecificList(Request $request, $id) {
         $listInfo = GameList::where('id',$id)->firstorFail();
+        $search = $request["search"] ?? "";
 
-        $games = DB::table('game_lists')
-        ->select('game_lists.id as list_id',
-        'list_contains.list_id', 'list_contains.game_id',
-        'games.id as game_id', 'games.poster')
+        if($search != "") {
+            $games = DB::table('game_lists')
+            ->select('game_lists.id as list_id', 'list_contains.list_id', 'list_contains.game_id', 'games.id as game_id', 'games.poster')
+            ->join('list_contains', 'list_contains.list_id', '=', 'game_lists.id')
+            ->join('games', 'list_contains.game_id', '=', 'games.id')
+            ->where('game_lists.id', '=', $id)
+            ->where(function($query) use ($search) {
+                $query->where('genre', 'LIKE', "%$search%")
+                ->orwhere('platform', 'LIKE', "%$search%")
+                ->orwhere('year', 'LIKE', "%$search%");
+            })->get();
+        }
+        else {
+            $games = DB::table('game_lists')
+            ->select('game_lists.id as list_id',
+            'list_contains.list_id', 'list_contains.game_id',
+            'games.id as game_id', 'games.poster')
+            ->join('list_contains', 'list_contains.list_id', '=', 'game_lists.id')
+            ->join('games', 'list_contains.game_id', '=', 'games.id')
+            ->where('game_lists.id', '=', $id)
+            ->get();
+        }
+
+        $genres = DB::table('game_lists')
+        ->select('games.genre')
         ->join('list_contains', 'list_contains.list_id', '=', 'game_lists.id')
         ->join('games', 'list_contains.game_id', '=', 'games.id')
         ->where('game_lists.id', '=', $id)
+        ->distinct()
         ->get();
-        return view('list-page', compact('listInfo', 'games'));
+
+        $platforms = DB::table('game_lists')
+        ->select('games.platform')
+        ->join('list_contains', 'list_contains.list_id', '=', 'game_lists.id')
+        ->join('games', 'list_contains.game_id', '=', 'games.id')
+        ->where('game_lists.id', '=', $id)
+        ->distinct()
+        ->get();
+
+        $years = DB::table('game_lists')
+        ->select('games.year')
+        ->join('list_contains', 'list_contains.list_id', '=', 'game_lists.id')
+        ->join('games', 'list_contains.game_id', '=', 'games.id')
+        ->where('game_lists.id', '=', $id)
+        ->distinct()
+        ->get();
+
+        return view('list-page', compact('listInfo', 'games', 'genres', 'platforms', 'years'));
     }
 
     function showListInfo(Request $request, $id) {

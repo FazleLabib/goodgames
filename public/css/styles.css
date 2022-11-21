@@ -263,7 +263,7 @@ main {
     padding: 10px;
 }
 
-#primary_nav_wrap ul {
+#primary_nav_wrap ul, .specific-list ul {
     position: relative;
     float: left;
     margin-left: 10px;
@@ -285,7 +285,7 @@ main {
     border-radius: 2px;
 }
 
-#primary_nav_wrap ul a {
+#primary_nav_wrap ul a, .specific-list ul a {
     display: block;
     color: var(--less-white);
     font-weight: 700;
@@ -294,47 +294,40 @@ main {
     padding: 0 15px;
 }
 
-#primary_nav_wrap ul li {
+#primary_nav_wrap ul li, .specific-list ul li {
     position: relative;
     float: left;
     margin: 0;
     padding: 0;
 }
 
-/*
-#primary_nav_wrap ul li.current-menu-item
-{
-	background: ;
-}
-*/
-
-#primary_nav_wrap ul li:hover {
+#primary_nav_wrap ul li:hover, .specific-list ul li:hover {
     background: var(--void-blue);
 }
 
-#primary_nav_wrap ul ul {
+#primary_nav_wrap ul ul, .specific-list ul ul {
     margin: 0px;
     display: none;
     position: absolute;
     background: var(--eerie-black);
 }
 
-#primary_nav_wrap ul ul li {
+#primary_nav_wrap ul ul li, .specific-list ul ul li {
     float: none;
     width: 200px;
 }
 
-#primary_nav_wrap ul ul a {
+#primary_nav_wrap ul ul a, .specific-list ul ul a {
     line-height: 120%;
     padding: 10px 15px;
 }
 
-#primary_nav_wrap ul ul ul {
+#primary_nav_wrap ul ul ul, .specific-list ul ul ul {
     top: 0;
     left: 100%;
 }
 
-#primary_nav_wrap ul li:hover > ul {
+#primary_nav_wrap ul li:hover > ul, .specific-list ul li:hover > ul {
     display: block;
 }
 
@@ -1289,6 +1282,7 @@ main {
 }
 
 /*****Specific List Page*****/
+/* Some css elements of this page are in home page section */
 
 .specific-list {
     margin-left: 15.5%;
@@ -1303,11 +1297,22 @@ main {
     width: 100%;
     padding-left: 24px;
     border-bottom: 1px solid var(--less-white);
+    justify-content: space-between;
+}
+
+.specific-list .list-title-edit {
+    display: flex;
+    align-items: center;
+}
+
+.specific-list .header ul {
+    margin: 0px;
+    margin-right: 50px;
 }
 
 .specific-list .edit-option {
     margin-left: 20px;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .specific-list .edit-icon {
