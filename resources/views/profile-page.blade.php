@@ -23,7 +23,7 @@
                     </a>
                 </div>
                 <div class="profile-lists">
-                    <a href="lists">
+                    <a href="/profile/{{ Auth::user()->id }}/lists">
                         <h2>{{ $listCount }}</h2>
                         <h3>lists</h3>
                     </a>

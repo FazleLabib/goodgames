@@ -195,4 +195,44 @@ class ListController extends Controller
         return redirect('lists')->with('success', 'This list was successfully removed');
     }
 
+    function showMyLists(Request $request, $id) {
+
+        $search = $request["search"] ?? "";
+        if($search != "") {
+
+            $lists = DB::table('game_lists')
+            ->select('game_lists.id as list_id', 'game_lists.user_id', 'game_lists.name as title', 'game_lists.description', 'users.name')
+            ->join('users', 'game_lists.user_id', '=', 'users.id')
+            ->where(function($query) use ($search) {
+                $query->where('game_lists.name', 'LIKE', "%$search%");
+            })->get();
+
+        }
+        else {
+
+            $lists = DB::table('game_lists')
+            ->select('game_lists.id as list_id', 'game_lists.user_id', 'game_lists.name as title', 'game_lists.description', 'users.name')
+            ->join('users', 'game_lists.user_id', '=', 'users.id')
+            ->where('users.id', '=', $id)
+            ->get();
+
+        }
+        $games = [];
+
+        foreach($lists as $list){
+            $game = DB::table('games')
+            ->select('games.id', 'games.poster',
+            'game_lists.id',
+            'list_contains.list_id', 'list_contains.game_id')
+            ->join('list_contains', 'list_contains.game_id', '=', 'games.id')
+            ->join('game_lists', 'game_lists.id', '=', 'list_contains.list_id')
+            ->where('list_contains.list_id', '=', $list->list_id)
+            ->take(5)
+            ->get();
+
+            array_push($games,$game);
+        }
+        return view('user-lists', compact('lists', 'search', 'games'));
+    }
+
 }
