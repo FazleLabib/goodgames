@@ -17,7 +17,7 @@
             </div>
             <div class="profile-stats">
                 <div class="games-played">
-                    <a class="stat-home" href="home">
+                    <a class="stat-home" href="profile/{{ Auth::user()->id }}/games">
                         <h2>{{ $gameCount }}</h2>
                         <h3>games</h3>
                     </a>
