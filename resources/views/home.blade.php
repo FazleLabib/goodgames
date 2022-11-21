@@ -33,6 +33,7 @@
                         @endforeach
                     </ul>
                 </li>
+                <li id="menu-name"><a href="?search=">RESET</a></li>
             </ul>
             <form action="">
                 <div class="search-form">
