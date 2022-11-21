@@ -15,14 +15,14 @@ class UserController extends Controller
 
     function checklogin(Request $request)
 	{
-		//create a validation of login 
+		//create a validation of login
 		$this->validate($request,[
 			'email' => 'required|email',
 			'password' => 'required|alphaNum|min:5'
 		]);
 
         $user_data = array(
-			'email' => $request->get('email'), 
+			'email' => $request->get('email'),
 			'password' => $request->get('password')
 		);
 
@@ -44,11 +44,14 @@ class UserController extends Controller
 	}
 
 	function update(Request $request) {
+        $password =  Auth::User()->password;
 		$user_id = Auth::User()->id;
 		$user = User::findorFail($user_id);
 		$user->name = $request->input('name');
 		$user->email = $request->input('email');
-		$user->password = bcrypt($request->input('password'));
+        if($request->filled('password')) {
+            $user->password = bcrypt($request->input('password'));
+        }
 
 		if($request->hasfile('image')) {
 			$destination = 'images/'.$user->image;
