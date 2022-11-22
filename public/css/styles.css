@@ -983,10 +983,9 @@ main {
 .new-list-container {
     display: flex;
     flex-direction: column;
-    margin-top: 70px;
-    margin-left: 15.5%;
-    margin-right: 15.5%;
-    padding-left: 24px;
+    margin-top: 30px;
+    margin-left: 16.5%;
+    margin-right: 16.5%;
     justify-content: space-between;
 }
 
@@ -1052,7 +1051,7 @@ main {
 }
 
 .fav-cards .fav-header {
-    width: 640px;
+    width: 615px;
     border-bottom: 1px solid var(--less-white);
 }
 
@@ -1170,20 +1169,72 @@ main {
     justify-content: center;
 } */
 
+/*****Edit Review Page*****/
+/* Some css elements of this page are in modal in specific game page */
+.edit-list-form {
+    width: 1290px;
+}
+.edit-review-title-year {
+    display: flex;
+    font-size: 30px;
+}
+
+.edit-review-title-year h3 {
+    margin: 0px;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.edit-review-title-year .year {
+    margin-left: 10px;
+    color: var(--less-white);
+}
+
+.edit h3 {
+    margin-left: 0px;
+}
+
+.edit-date input {
+    margin-left: 20px;
+    width: 140px;
+}
+
+.edit-review {
+    margin: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.edit-review-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cancel-btn {
+    margin-left: 10px;
+    padding: 15px;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
 /*****New List*****/
 /* Some css elements of this page are in edit-profile section */
 .new-list-container textarea {
     background-color: var(--less-white);
     color: var(--void-blue);
     font-size: 25px;
-    width: 1265px;
+    width: 1255px;
     height: 300px;
     padding: 12px;
     resize: none;
 }
 
 .new-list-btn button {
-    width: 100px;
+    width: 105px;
 }
 
 .new-list-btn .delete-btn {
@@ -1343,7 +1394,7 @@ main {
 .new-list-container .content {
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 .edit-list-search {

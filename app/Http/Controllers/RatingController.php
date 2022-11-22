@@ -105,6 +105,17 @@ class RatingController extends Controller
         return redirect('settings')->with('success', 'This game was removed from your favorite list');
     }
 
+    function showLoggedInfo($id) {
+        $reviews = DB::table('ratings')
+        ->select('ratings.id', 'ratings.game_id', 'ratings.rating', 'ratings.review', 'ratings.date',
+        'games.id as game_id', 'games.title', 'games.year')
+        ->join('games', 'ratings.game_id', '=', 'games.id')
+        ->where('ratings.id', $id)
+        ->get();
+        return view('edit-logged', compact('reviews'));
+
+    }
+
     function editLog(Request $request, $id) {
         $values = [
             'rating' => $request->input('rating2'),
@@ -115,11 +126,12 @@ class RatingController extends Controller
         DB::table('ratings')
         ->where('id', $id)
         ->update($values);
-        return redirect('profile')->with('success', "This game's log info was successfully edited");
+
+        return Redirect::back()->with('success', "This game's log info was successfully updated");
 
     }
 
-    function deleteLog($id) {
+    function deleteReview($id) {
         DB::table('ratings')->where('id', $id)->delete();
         return redirect('profile')->with('success', "This game's log info was successfully deleted");
     }
