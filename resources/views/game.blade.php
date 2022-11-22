@@ -19,9 +19,9 @@
                             <button type="button" onclick="document.getElementById('id01').style.display='block'">log
                                 game</button>
                         </a>
-                        <a href='#'>
+                        {{-- <a href='#'>
                             <button type="button">add to a list</button>
-                        </a>
+                        </a> --}}
                     </div>
                 </div>
             </div>
